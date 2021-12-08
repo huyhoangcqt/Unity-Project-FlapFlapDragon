@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 6587dd60d4d9f914a9b8e01182a0f99c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Aromia Script
+  fontNames:
+  - Aromia Script
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7016dbd50eb83a344aa1697ee7f7bda1, type: 3}
+  - {fileID: 12800000, guid: 43bb8d2aeea25c040ad18af1e7e1247c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
