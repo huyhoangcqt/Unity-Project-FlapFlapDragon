@@ -71,6 +71,7 @@
      <Compile Include="Assets\Script\Playerground\Player\NormalSkill.cs" />
      <Compile Include="Assets\Script\Playerground\Player\PlayerCollision\CollisionProcessing.cs" />
      <Compile Include="Assets\Script\Playerground\Player\PlayerController.cs" />
+     <Compile Include="Assets\Script\Playerground\Player\TestAnything.cs" />
      <Compile Include="Assets\Script\Playerground\Stats.cs" />
      <Compile Include="Assets\Script\UI\FixUIPosition.cs" />
      <Compile Include="Assets\Script\UI\FlameThrowButton.cs" />
@@ -260,6 +261,12 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+        <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+        <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

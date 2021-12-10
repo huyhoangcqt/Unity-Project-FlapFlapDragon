@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static bool onGround = false, isActive = false;
     private Animator anim;
-    public TutorialManager tutorialManager;
+    // public TutorialManager tutorialManager;
 
     public float jumpForce, moveForce, deltaTime; //deltaTime must be >= Time.deltaTime;
     public float additionalJumpForce, additionalMoveForce;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isActive", false);
         
         //Step 1
-        tutorialManager.SetIndex(0);
+        // tutorialManager.SetIndex(0);
 
         duration = 0f;
         isHoldingOnLeft = false;
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnFirstEnemyAppear(){
-        tutorialManager.SetIndex(1);
+        // tutorialManager.SetIndex(1);
     }
 
     private void OnHoldingLeftSide(){
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
                         isActive = true;
                         anim.SetBool("isActive", isActive);
 
-                        tutorialManager.SetIndex(-1);//Passed step 1;
+                        // tutorialManager.SetIndex(-1);//Passed step 1;
                         
                         //Set Force;
                         tempJumpForce = jumpForce;

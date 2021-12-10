@@ -12,7 +12,7 @@ public class HealthController : MonoBehaviour
     public HealthBar healthBar;
 
     public GameObject healthBarFill;
-    private Animator healthBarAnim;
+    private Animator healthBarAnim, playerAnim;
     public Stats stats;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class HealthController : MonoBehaviour
         healthBar.SetCurrentHealth(crrHP);
 
         healthBarAnim = healthBarFill.gameObject.GetComponent<Animator>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,8 @@ public class HealthController : MonoBehaviour
         if (crrHP <= 0){
             GeneralInfor.isDead = true;
             GeneralInfor.deadCount += 1;
+
+            playerAnim.SetBool("isDie", true);
         }
     }
 
