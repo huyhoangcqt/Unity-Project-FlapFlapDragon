@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isHoldingOnLeft;
 
+
     Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
@@ -102,6 +103,12 @@ public class PlayerController : MonoBehaviour
                         isHoldingOnLeft = false;
                         duration = 0f;
                     }   
+                }
+                //If Touch at right side => shooting
+                else {
+                    if (touch.phase == TouchPhase.Ended){
+                        EmberSkillManager.Instance.Process(touch);
+                    }
                 }
             };
             
