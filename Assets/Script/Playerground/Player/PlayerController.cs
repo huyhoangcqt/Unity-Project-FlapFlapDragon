@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
             Touch[] myTouches = Input.touches;
             foreach (Touch touch in myTouches){
                 //If Touch at left side
-                if (touch.position.x < Screen.width/2){
+                if (touch.position.x < Screen.width *2/5){
                     if (touch.phase == TouchPhase.Began){
                         //process here;
                         isHoldingOnLeft = true;
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
                 //If Touch at right side => shooting
                 else {
                     if (touch.phase == TouchPhase.Ended){
-                        EmberSkillManager.Instance.Process(touch);
+                        EmberSkillManager.instance.Process(touch);
                     }
                 }
             };

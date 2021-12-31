@@ -44,6 +44,7 @@ public class EnemyHealthController : MonoBehaviour
     }
 
     public void TakeDamage(float dmg){
+        print("Take Damage " + dmg);
         hbCanvas.enabled = true;
         crrHP -= dmg;
         if (crrHP < 0){

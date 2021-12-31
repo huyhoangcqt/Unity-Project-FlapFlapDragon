@@ -13,7 +13,7 @@ public class EnemyCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Bullet"){
             BulletStats bulletStats = other.GetComponent<BulletStats>();
-            float dmg = bulletStats.GetDmg();
+            float dmg = bulletStats.dmg;
             healthController.TakeDamage(dmg);
         }
 

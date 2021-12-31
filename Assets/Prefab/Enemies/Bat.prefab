@@ -334,7 +334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107887933855750}
   - component: {fileID: 7233107887933855745}
-  - component: {fileID: 5955581571430260744}
   m_Layer: 0
   m_Name: Body
   m_TagString: Enemy
@@ -406,18 +405,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5955581571430260744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7233107887933855751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed08c6269b69a24981720dc6bdabd68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7233107888372422320
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +534,7 @@ GameObject:
   - component: {fileID: 931551561713211470}
   - component: {fileID: 1991515466}
   - component: {fileID: 1991515467}
+  - component: {fileID: 1688759904}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -628,7 +616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  batVisible: {fileID: 5955581571430260744}
 --- !u!114 &536434747915745993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,11 +628,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355071034e38126449969fad1866d58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 22
-  mn: 0
-  dmg: 10
-  spe: 10
-  shootAngle: 30
+  _hp: 20
+  _mn: 10
+  _dmg: 10
+  _spe: 10
 --- !u!58 &931551561713211470
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -690,6 +676,18 @@ MonoBehaviour:
     type: 3}
   ragePoint: {fileID: 7609979618407585588, guid: d793c82a4e5c2fe47b55b781b45bf7a4,
     type: 3}
+--- !u!114 &1688759904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233107889099830162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb24455701e502459483ad69ebecf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8250332091450321799
 GameObject:
   m_ObjectHideFlags: 0

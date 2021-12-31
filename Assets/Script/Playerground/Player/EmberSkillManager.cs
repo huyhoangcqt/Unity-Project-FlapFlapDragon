@@ -2,28 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmberSkillManager : MonoBehaviour
+public class EmberSkillManager : Singleton<EmberSkillManager>
 {
-    private static EmberSkillManager _instance;
-
     [SerializeField] private float bulletSpeed;
 
     //Shooting variables
     [SerializeField] private GameObject bulletSrc;
     [SerializeField] private GameObject bullet;
 
-    public static EmberSkillManager Instance{
-        get { 
-            if (_instance == null){
-                Debug.LogError("EmberSkillManager is null");
-            }
-            return _instance; 
-        }
-    }
-
-    private void Awake() {
-        _instance = this;
-    }
     // Start is called before the first frame update
 
     public void Process(Touch touch){
@@ -36,7 +22,7 @@ public class EmberSkillManager : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.right);
 
         // rotation = Quaternion.Euler(0, 30, 0);
-        print(rotation);
+        // print(rotation);
 
         GameObject bullet_instance = Instantiate(bullet, bulletSrc.transform.position, rotation);
         bullet_instance.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;

@@ -12,7 +12,7 @@ public class NormalSkill : MonoBehaviour
 
     //Player;
     private Animator anim;
-    private float shootAngle;
+    // private float shootAngle;
     
     //UI;
     public VariableJoystick variableJoystick;
@@ -26,7 +26,7 @@ public class NormalSkill : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        shootAngle = GetComponent<Stats>().shootAngle;
+        // shootAngle = GetComponent<Stats>().shootAngle;
     }
 
     // Update is called once per frame
@@ -49,9 +49,9 @@ public class NormalSkill : MonoBehaviour
 
     public void ShootBullet(){
         //Player shooter Angle;
-        float saRadian = shootAngle * Mathf.PI / 180;
-        float saSin = Mathf.Sin(saRadian);
-        float saCos = Mathf.Cos(saRadian);
+        // float saRadian = shootAngle * Mathf.PI / 180;
+        // float saSin = Mathf.Sin(saRadian);
+        // float saCos = Mathf.Cos(saRadian);
 
         Vector2 newDirection = savedDirection;
 
@@ -66,13 +66,13 @@ public class NormalSkill : MonoBehaviour
         while (degree > 180){
             degree -= 180;
         }
-        if (degree > shootAngle){
-            degree = shootAngle;
-            newDirection = new Vector2(saCos, saSin);
-            if (y < 0){
-                newDirection.y *= -1;
-            }
-        };
+        // if (degree > shootAngle){
+        //     degree = shootAngle;
+        //     newDirection = new Vector2(saCos, saSin);
+        //     if (y < 0){
+        //         newDirection.y *= -1;
+        //     }
+        // };
         if (y < 0){
             degree *= -1;
         }

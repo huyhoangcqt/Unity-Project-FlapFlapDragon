@@ -29,7 +29,7 @@ public class ObstacleCollision : MonoBehaviour
                 string ele = bulletStat.element;    
                 if (ele == "Fire"){
                     // Take Burn damge per second;
-                    float burnDps = bulletStat.GetBurnDps();
+                    float burnDps = bulletStat.burnDps;
                     float duration = bulletStat.duration;
                     StartCoroutine(TakeBurnDamge(burnDps, duration));
                     
