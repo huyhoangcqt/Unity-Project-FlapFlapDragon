@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static bool onGround = false, isActive = false;
+    private bool inputEnabled = true;
     private Animator anim;
     // public TutorialManager tutorialManager;
 
@@ -14,9 +15,9 @@ public class PlayerController : MonoBehaviour
     private float duration;
     private float tempJumpForce, tempMoveForce;
     private float subJumpForce, subMoveForce;
-
     private bool isHoldingOnLeft;
 
+    [SerializeField]private float dashForce, dragForce;
 
     Rigidbody2D body;
     // Start is called before the first frame update
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TouchDetection();
+        InputDectection();
         OnHoldingLeftSide();
         // if (CheckingFirstEnemyAppear()){
         //     OnFirstEnemyAppear();
@@ -73,45 +74,54 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void TouchDetection(){
-        if (Input.touchCount > 0){
-            Touch[] myTouches = Input.touches;
-            foreach (Touch touch in myTouches){
-                //If Touch at left side
-                if (touch.position.x < Screen.width *2/5){
-                    if (touch.phase == TouchPhase.Began){
-                        //process here;
-                        isHoldingOnLeft = true;
-                        isActive = true;
-                        anim.SetBool("isActive", isActive);
+    public void EnableInputGetting(){
+        inputEnabled = true;
+    }
 
-                        // tutorialManager.SetIndex(-1);//Passed step 1;
-                        
-                        //Set Force;
-                        tempJumpForce = jumpForce;
-                        tempMoveForce = moveForce;
-                        body.velocity = new Vector2(0, 0);
-                        Moving();
-                        tempJumpForce = additionalJumpForce;
-                        tempMoveForce = additionalMoveForce;
+    public void DisableInputGetting(){
+        inputEnabled = false;
+    }
 
-                        //OnGround;
-                        onGround = false;
-                        anim.SetBool("isIdle", false);
+    void InputDectection(){
+        if (inputEnabled){
+            if (Input.touchCount > 0){
+                Touch[] myTouches = Input.touches;
+                foreach (Touch touch in myTouches){
+                    //If Touch at left side
+                    if (touch.position.x < Screen.width *2/5){
+                        if (touch.phase == TouchPhase.Began){
+                            //process here;
+                            isHoldingOnLeft = true;
+                            isActive = true;
+                            anim.SetBool("isActive", isActive);
+
+                            // tutorialManager.SetIndex(-1);//Passed step 1;
+                            
+                            //Set Force;
+                            tempJumpForce = jumpForce;
+                            tempMoveForce = moveForce;
+                            body.velocity = new Vector2(0, 0);
+                            Moving();
+                            tempJumpForce = additionalJumpForce;
+                            tempMoveForce = additionalMoveForce;
+
+                            //OnGround;
+                            onGround = false;
+                            anim.SetBool("isIdle", false);
+                        }
+                        if (touch.phase == TouchPhase.Ended){
+                            isHoldingOnLeft = false;
+                            duration = 0f;
+                        }   
                     }
-                    if (touch.phase == TouchPhase.Ended){
-                        isHoldingOnLeft = false;
-                        duration = 0f;
-                    }   
-                }
-                //If Touch at right side => shooting
-                else {
-                    if (touch.phase == TouchPhase.Ended){
-                        EmberSkillManager.instance.Process(touch);
+                    //If Touch at right side => shooting
+                    else {
+                        if (touch.phase == TouchPhase.Ended){
+                            EmberSkillManager.instance.Process(touch);
+                        }
                     }
-                }
-            };
-            
+                };
+            }
         }
     }
 
@@ -135,5 +145,30 @@ public class PlayerController : MonoBehaviour
             onGround = true;
             anim.SetBool("isIdle", onGround);
         }
+    }
+
+    private float tempGravityScale;
+    public void PreDashMovement(){
+        DisableInputGetting();
+
+        body.velocity = Vector3.zero;
+        tempGravityScale = body.gravityScale;
+        body.gravityScale = 0f;
+
+        body.AddForce(new Vector2(50, 0f));
+    }
+
+    public void DashMovementOn(){
+        body.AddForce(new Vector2(dashForce, 0f));
+    }
+
+    public void DashMovementOff(){
+        EnableInputGetting();
+
+        body.gravityScale = tempGravityScale;
+    }
+
+    public void RemoveInertiaMoment(){
+        body.AddForce(new Vector2 (-dragForce, 0f));
     }
 }

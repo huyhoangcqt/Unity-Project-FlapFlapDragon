@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashButton : MonoBehaviour
+public class FireExplosionButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

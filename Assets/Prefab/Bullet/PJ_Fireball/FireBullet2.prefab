@@ -4858,6 +4858,7 @@ GameObject:
   - component: {fileID: 6227613870978191817}
   - component: {fileID: 6025556951195058156}
   - component: {fileID: 6253615661121351264}
+  - component: {fileID: 666596198034820503}
   m_Layer: 0
   m_Name: FireBullet2
   m_TagString: Bullet
@@ -4972,6 +4973,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b64f3b626f1eaf49a17d1113e74c713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &666596198034820503
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6253615661121351267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b8a5f1dc7dab244298d8bbb359ffc36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6253615661270191590
 GameObject:
   m_ObjectHideFlags: 0
