@@ -64,7 +64,7 @@ public class HealthController : MonoBehaviour
         healthBar.SetCurrentHealth(crrHP);
 
         healthBarAnim.SetBool("isTakeDmg", true);
-        // Debug.Log("Target Dmg: " + dmg);
+        Debug.Log("Target Dmg: " + dmg);
     }
 
     public int getCurrentHealthPoint(){

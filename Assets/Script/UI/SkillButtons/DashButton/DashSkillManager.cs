@@ -8,16 +8,16 @@ public class DashSkillManager : MonoBehaviour
     [SerializeField]private DashButton button;
     [SerializeField]private float coolDownTime;
     [SerializeField]private PlayerController playerController;
-    
 
     private IEnumerator StartCoolDownTime(){
-        yield return new WaitForSeconds(coolDownTime - 1f);
-        playerController.RemoveInertiaMoment();
+        yield return new WaitForSeconds(coolDownTime - 2f);
+        playerController.DashMovementLastMove();
         yield return new WaitForSeconds(1f);
         DashSkillEnd();
     }
 
     private void PreDashSkillStart(){
+        playerController.status = PlayerStatus.Invincible;
         skillEffect.DashEffectStart();
         button.Disable();
         playerController.PreDashMovement();
@@ -29,6 +29,7 @@ public class DashSkillManager : MonoBehaviour
     }
 
     public void OnButtonClick(){
+        //Sound
         PreDashSkillStart();
         StartCoroutine(WaitingPreDashSkill());
         StartCoroutine(StartCoolDownTime());
