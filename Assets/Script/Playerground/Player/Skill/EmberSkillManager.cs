@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EmberSkillManager : Singleton<EmberSkillManager>
 {
-    [SerializeField] private float bulletSpeed;
-
     //Shooting variables
-    [SerializeField] private GameObject bulletSrc;
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private GameObject bulletSrc, bullet;
+    [SerializeField] private ButtonControl button;
+    [SerializeField] private float cooldownTime;
 
     private Animator anim;
     private GameObject head;
@@ -46,6 +46,32 @@ public class EmberSkillManager : Singleton<EmberSkillManager>
         anim.SetBool("isAttack", true);
         temp_rotation = head.transform.rotation;
         head.transform.rotation = rotation;
+
+        CooldownStart();
+    }
+
+    private  IEnumerator StartCooldown(float time){
+        button.UpdateCooldownText(time, "N0");
+        while (time > 1f){
+            yield return new WaitForSeconds(1f);
+            time -= 1f;
+            button.UpdateCooldownText(time, "N0");
+        }
+        while (time > 0f){
+            yield return new WaitForSeconds(0.1f);
+            time -= 0.1f;
+            button.UpdateCooldownText(time, "N1");
+        }
+        CooldownEnd();
+    }
+
+    internal void CooldownEnd(){
+        button.ActiveButton();
+    }
+
+    private void CooldownStart(){
+        button.CooldownEffectStart(cooldownTime);
+        StartCoroutine(StartCooldown(cooldownTime));
     }
 
     public void OnEmberEnd(){

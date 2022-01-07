@@ -56,6 +56,7 @@
      <Compile Include="Assets\Script\Effect\FireLightExplosion.cs" />
      <Compile Include="Assets\Script\Effect\FlameThrowParticle\FlameCollision.cs" />
      <Compile Include="Assets\Script\Effect\FlameThrowParticle\FlamePosition.cs" />
+     <Compile Include="Assets\Script\Effect\ParticleAutoScale.cs" />
      <Compile Include="Assets\Script\General\ObjectVisible.cs" />
      <Compile Include="Assets\Script\General\Singleton.cs" />
      <Compile Include="Assets\Script\General\Stats.cs" />
@@ -88,10 +89,12 @@
      <Compile Include="Assets\Script\UI\RageBarFill.cs" />
      <Compile Include="Assets\Script\UI\RageController.cs" />
      <Compile Include="Assets\Script\UI\RagePoint.cs" />
-     <Compile Include="Assets\Script\UI\SkillButtons\DashButton\DashButton.cs" />
-     <Compile Include="Assets\Script\UI\SkillButtons\DashButton\DashSkillManager.cs" />
+     <Compile Include="Assets\Script\UI\SkillButtons\ButtonControl.cs" />
+     <Compile Include="Assets\Script\UI\SkillButtons\DashSkillManager.cs" />
+     <Compile Include="Assets\Script\UI\SkillButtons\EmberButton.cs" />
      <Compile Include="Assets\Script\UI\SkillButtons\FireExplosionButton.cs" />
      <Compile Include="Assets\Script\UI\SkillButtons\FlameThrowButton.cs" />
+     <Compile Include="Assets\Script\UI\SkillButtons\SkillManager.cs" />
      <Compile Include="Assets\Script\UI\Testing\TestImage.cs" />
      <Compile Include="Assets\Script\UI\TutorialManager.cs" />
      <Compile Include="Assets\Script\UI\UIAutomaticScale.cs" />
