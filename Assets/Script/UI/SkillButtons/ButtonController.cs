@@ -1,0 +1,137 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+
+public class ButtonController : MonoBehaviour
+{
+    private float _bannedTime, _cooldownTime;
+    public float bannedTime{ 
+        get { return _bannedTime; }
+        set { _bannedTime = value; }
+    }
+    public float cooldownTime{ 
+        get { return _cooldownTime; }
+        set { _cooldownTime = value; }
+    }
+    private bool isBanned, isCooldown, _isActive, _isEnoughEnergy;//energy/ rage
+    public bool isActive{
+        get { return _isActive; }
+        set { _isActive = value; }
+    }
+    public bool isEnoughEnergy{
+        get { return _isEnoughEnergy; }
+        set { _isEnoughEnergy = value; }
+    }
+
+    protected GameObject flashEffect;
+    protected ParticleController particleController;
+    protected GameObject inactive, cooldownText, banned;
+    private Text cdText;
+    void Start(){
+        inactive = FindGameObject("inactive");
+        cooldownText = FindGameObject("cooldownText");
+        banned = FindGameObject("bannedSymbol");
+        flashEffect = FindGameObject("flashEffect");
+        particleController = flashEffect.GetComponent<ParticleController>();
+        cdText = cooldownText.GetComponent<Text>();
+        isBanned = false; isCooldown = false; isActive = false; isEnoughEnergy = false;
+    }
+
+    GameObject FindGameObject(string objectName){
+        Transform result = transform.Find(objectName);
+        if (result == null){
+            Debug.LogError("Could not find object '" + objectName + "';");
+            return null;
+        }
+        else return result.gameObject;
+    }
+
+    /**
+     * *Require to active: @ActiveButton() function
+     * 1. No cooldown
+     * 2. No banned
+     * Enough energy/ rage point
+    */
+    public virtual void ActiveButton(){
+   
+        flashEffect.SetActive(true);
+        particleController.Play();
+        HideFlashEffect(1f);
+
+        isActive = true;
+        inactive.SetActive(false);
+        Enable();
+    }
+
+    IEnumerator HideFlashEffect(float time){
+        yield return new WaitForSeconds(time);
+        flashEffect.SetActive(false);
+    }
+
+    public void DisableButton(){
+        inactive.SetActive(true);
+        Disable();
+    }
+
+    internal void BannedOn(float time){
+        if (bannedTime <= 0){
+            bannedTime = time;
+            banned.SetActive(true);
+            isBanned = true;
+            DisableButton();
+        }
+        else {
+            bannedTime = Math.Max(bannedTime, time);
+        }
+    }
+
+    public void Update(){
+        if (bannedTime > 0){
+            bannedTime -= Time.deltaTime;
+            if (bannedTime <= 0){
+                BannedOff();
+            }
+        };
+        if (cooldownTime > 0){
+            cooldownTime -= Time.deltaTime;
+            if (cooldownTime <= 0){
+                CooldownEffectEnd();
+            }
+        };
+        if (!isActive){
+            if (!isCooldown && !isBanned && isEnoughEnergy){
+                ActiveButton();
+            }
+        }
+    }
+
+    private void BannedOff(){
+        banned.SetActive(false);
+        isBanned = false;
+    }
+
+    internal void CooldownEffectStart(float time){
+        cooldownTime = time;
+        cooldownText.SetActive(true);
+        isCooldown = true;
+        DisableButton();
+    }
+
+    internal void CooldownEffectEnd(){
+        cooldownText.SetActive(false);
+        isCooldown = false;
+    }
+
+    internal void UpdateCooldownText(float time, string format){
+        cdText.text = time.ToString(format);
+    }
+
+    public void Disable(){
+        GetComponent<Button>().enabled = false;
+        print("Button disable");
+    }
+    public void Enable(){
+        GetComponent<Button>().enabled = true;
+        print("Button enable");
+    }
+}

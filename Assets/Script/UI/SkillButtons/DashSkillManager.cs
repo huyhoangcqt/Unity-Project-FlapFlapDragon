@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DashSkillManager : MonoBehaviour
 {
     [SerializeField]private DashSkillEffect skillEffect;
-    [SerializeField]private ButtonControl button;
+    [SerializeField]private ButtonController button;
     [SerializeField]private PlayerController playerController;
     [SerializeField]private float durationTime, cooldownTime;
     private SkillManager skillManager;
@@ -14,14 +14,8 @@ public class DashSkillManager : MonoBehaviour
         skillManager = gameObject.GetComponent<SkillManager>();
     }
 
-    public void Update(){
-        if (Input.GetMouseButtonDown(0)){
-            CooldownStart();
-        }
-    }
-
     private IEnumerator DashDuration(){
-        yield return new WaitForSeconds(durationTime - 2f);
+        yield return new WaitForSeconds(durationTime - 1f);
         playerController.DashMovementLastMove();
         yield return new WaitForSeconds(1f);
         DashSkillEnd();
@@ -30,12 +24,14 @@ public class DashSkillManager : MonoBehaviour
     private void DashSkillEnd(){
         skillEffect.DashEffectEnd();
         playerController.DashMovementOff();
+        playerController.status = PlayerStatus.Normal;
     }
 
     private void DashSkillStart(){
         playerController.status = PlayerStatus.Invincible;
         skillEffect.DashEffectStart();
         playerController.PreDashMovement();
+        button.isActive = false;
         button.BannedOn(durationTime);
     }
 
@@ -45,6 +41,7 @@ public class DashSkillManager : MonoBehaviour
     }
 
     public void OnButtonClick(){
+        button.isEnoughEnergy = true;
         //Skill Effect
         DashSkillStart();
         StartCoroutine(WaitingPreDashSkill());
