@@ -33,6 +33,7 @@ public class DashSkillManager : MonoBehaviour
         playerController.PreDashMovement();
         button.isActive = false;
         button.BannedOn(durationTime);
+        SkillManager.instance.BannedAll(durationTime);
     }
 
     private IEnumerator WaitingPreDashSkill(){

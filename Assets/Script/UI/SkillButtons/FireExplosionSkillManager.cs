@@ -27,19 +27,22 @@ public class FireExplosionSkillManager : MonoBehaviour
         skillEffect.ExplosionEffectEnd();
         playerController.ExplosionMovementOff();
         playerController.status = PlayerStatus.Normal;
-        LightController.Recover();
+        LightController.instance.Recover();
     }
 
     private void ExplosionSkillStart(){
         button.isActive = false;
         playerController.status = PlayerStatus.Invincible;
+        playerController.Disappear();
         playerController.PreExplosionMovement();
         button.BannedOn(durationTime);
-        LightController.Darken();
+        SkillManager.instance.BannedAll(durationTime);
+        LightController.instance.Darken();
     }
 
     private IEnumerator WaitingPreExplosionSkill(){
         yield return new WaitForSeconds(1f);
+        playerController.Appear();
         skillEffect.ExplosionEffectStart();
     }
 

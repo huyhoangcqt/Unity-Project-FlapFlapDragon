@@ -34,7 +34,7 @@ public class ButtonController : MonoBehaviour
         flashEffect = FindGameObject("flashEffect");
         particleController = flashEffect.GetComponent<ParticleController>();
         cdText = cooldownText.GetComponent<Text>();
-        isBanned = false; isCooldown = false; isActive = false; isEnoughEnergy = false;
+        isBanned = false; isCooldown = false; isActive = true; isEnoughEnergy = true;
     }
 
     GameObject FindGameObject(string objectName){
@@ -53,7 +53,7 @@ public class ButtonController : MonoBehaviour
      * Enough energy/ rage point
     */
     public virtual void ActiveButton(){
-   
+       //print("ActiveButton");
         flashEffect.SetActive(true);
         particleController.Play();
         HideFlashEffect(1f);
@@ -69,6 +69,7 @@ public class ButtonController : MonoBehaviour
     }
 
     public void DisableButton(){
+        isActive = false;
         inactive.SetActive(true);
         Disable();
     }
@@ -85,6 +86,7 @@ public class ButtonController : MonoBehaviour
         }
     }
 
+    private int temp = 0;
     public void Update(){
         if (bannedTime > 0){
             bannedTime -= Time.deltaTime;
@@ -99,6 +101,12 @@ public class ButtonController : MonoBehaviour
             }
         };
         if (!isActive){
+            if (temp < 3){
+               //print(temp.ToString() + ": isCooldown: " + isCooldown.ToString());
+               //print(temp.ToString() + ": isBanned: " + isBanned.ToString());
+               //print(temp.ToString() + ": isEnoughEnergy: " + isEnoughEnergy.ToString());
+                temp++;
+            }
             if (!isCooldown && !isBanned && isEnoughEnergy){
                 ActiveButton();
             }
@@ -128,10 +136,10 @@ public class ButtonController : MonoBehaviour
 
     public void Disable(){
         GetComponent<Button>().enabled = false;
-        print("Button disable");
+       ////print("Button disable");
     }
     public void Enable(){
         GetComponent<Button>().enabled = true;
-        print("Button enable");
+       ////print("Button enable");
     }
 }

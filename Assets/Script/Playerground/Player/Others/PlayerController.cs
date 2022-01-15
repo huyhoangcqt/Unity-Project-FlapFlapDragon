@@ -208,16 +208,7 @@ public class PlayerController : MonoBehaviour
         float distance = skill3Position_y - transform.position.y;
         float deltaDistance = distance;
         transform.Translate(Vector3.up * distance, Space.World);
-        //Transform position during 1 second;
-        // for (int i = 0; i < 5; i++){
-        //     StartCoroutine(TransformPosition(0.2f, deltaDistance));
-        // }
     }
-
-    // IEnumerator TransformPosition(float deltaTime, float deltaDistance){
-    //     yield return new WaitForSeconds(deltaTime);
-    //     transform.position = new Vector3(transform.position.x, transform.position.y + deltaDistance, transform.position.z);
-    // }
 
     public void ExplosionMovementOn(){
         //Do nothing
@@ -230,5 +221,19 @@ public class PlayerController : MonoBehaviour
 
     public void ExplosionMovementLastMove(){
         // Do nothing
+    }
+
+    //================================================================
+    [SerializeField]private GameObject flashEffect;
+    public void Disappear(){
+        gameObject.SetActive(false);
+        GameObject flashInstance = Instantiate(flashEffect, transform.position, Quaternion.identity );
+        Destroy(flashInstance, 2f);
+    }
+
+    public void Appear(){
+        GameObject flashInstance = Instantiate(flashEffect, transform.position, Quaternion.identity );
+        Destroy(flashInstance, 2f);
+        gameObject.SetActive(true);
     }
 }

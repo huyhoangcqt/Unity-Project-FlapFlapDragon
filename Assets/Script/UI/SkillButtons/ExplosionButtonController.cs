@@ -8,25 +8,25 @@ using UnityEngine;
 */
 public class ExplosionButtonController : ButtonController
 {
-    private GameObject rage_fire;
+    // private GameObject rage_fire;
 
     // private void Start(){
     //     // rage_fire = FindgameObject("rage_fire");
     //     // do some addative function
     // }
 
-    public override void ActiveButton(){
-        flashEffect.SetActive(true);
-        particleController.Play();
-        HideFlashEffect(1f);
+    // public override void ActiveButton(){
+    //     flashEffect.SetActive(true);
+    //     particleController.Play();
+    //     HideFlashEffect(1f);
 
-        isActive = true;
-        inactive.SetActive(false);
-        Enable();
-    }
+    //     isActive = true;
+    //     inactive.SetActive(false);
+    //     Enable();
+    // }
 
-    IEnumerator HideFlashEffect(float time){
-        yield return new WaitForSeconds(time);
-        flashEffect.SetActive(false);
-    }
+    // IEnumerator HideFlashEffect(float time){
+    //     yield return new WaitForSeconds(time);
+    //     flashEffect.SetActive(false);
+    // }
 }

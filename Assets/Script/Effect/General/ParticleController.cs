@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
-    ParticleSystem[] particleSystems;
+    private ParticleSystem[] particleSystems;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +12,7 @@ public class ParticleController : MonoBehaviour
     }
 
     public void Play(){
-        if (particleSystems.Length > 0){
+        if (particleSystems != null && particleSystems.Length > 0){
             foreach (ParticleSystem particleSystem in particleSystems){
                 particleSystem.Play();
             }
