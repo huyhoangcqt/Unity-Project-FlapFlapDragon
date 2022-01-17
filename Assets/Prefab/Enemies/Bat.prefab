@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107887223213575}
   - component: {fileID: 7233107887223213574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LWing
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107887279268701}
   - component: {fileID: 7233107887279268700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MouthDown
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107887349296000}
   - component: {fileID: 7233107887349296002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RWingDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107887665553315}
   - component: {fileID: 7233107887665553314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MouthUP
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107887933855750}
   - component: {fileID: 7233107887933855745}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7233107888372422323}
   - component: {fileID: 7233107888372422322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RWingUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7233107888544986305}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RWing
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 1991515466}
   - component: {fileID: 1991515467}
   - component: {fileID: 1688759904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7620879699862130680}
   - component: {fileID: 3475622682211617593}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,8 +879,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2065729722100073519, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065729722100073519, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014851027275532291, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803270354197237858, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350778168766861177, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7847102495771173215, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
@@ -891,6 +911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319312011011424535, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3338b11301b6581448946a59e8a67db1, type: 3}

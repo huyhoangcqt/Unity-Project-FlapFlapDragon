@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6998108210682341285}
   - component: {fileID: 7148132063664674443}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WarningLight2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4850726795302388480}
   - component: {fileID: 3681685752174911673}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WarningLight
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5753051114778922231}
   - component: {fileID: 5753051114778922230}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Web
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5753051115266320916}
   - component: {fileID: 5753051115266320919}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 3352813804930934045}
   - component: {fileID: 4952913869066495995}
   - component: {fileID: 6482708700049434645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5753051115555720994}
   - component: {fileID: 5753051115555721181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -695,8 +695,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2065729722100073519, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065729722100073519, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014851027275532291, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803270354197237858, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350778168766861177, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7847102495771173215, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
@@ -707,6 +727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319312011011424535, guid: 3338b11301b6581448946a59e8a67db1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9027074954993460127, guid: 3338b11301b6581448946a59e8a67db1, type: 3}

@@ -17,7 +17,7 @@ public class DashSkillEffect : MonoBehaviour
         }
     }
     public void DashEffectStart(){
-        print("Dash effect start");
+        // print("Dash effect start");
         anim.SetBool("isSkill2Active", true);
         dash.SetActive(true);
     }

@@ -17,8 +17,13 @@ public class ExplosionSkillEffect : MonoBehaviour
         explo_instance = Instantiate(explosionEffect, Vector3.zero, Quaternion.identity);
     }
 
+    public void CloseMouth(){
+        anim.SetBool("isSkill3Completed", true);
+    }
+
     public void ExplosionEffectEnd(){
         anim.SetBool("isSkill3Active", false);
-        Destroy(explo_instance);
+        anim.SetBool("isSkill3Completed", false);
+        Destroy(explo_instance, 2f);
     }
 }

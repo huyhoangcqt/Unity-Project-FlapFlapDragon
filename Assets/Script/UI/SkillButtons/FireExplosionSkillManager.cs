@@ -19,7 +19,9 @@ public class FireExplosionSkillManager : MonoBehaviour
     }
 
     private IEnumerator ExplosionDuration(){
-        yield return new WaitForSeconds(durationTime);
+        yield return new WaitForSeconds(4f);
+        skillEffect.CloseMouth();
+        yield return new WaitForSeconds(durationTime - 4f);
         ExplosionSkillEnd();
     }
 

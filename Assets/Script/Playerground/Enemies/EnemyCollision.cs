@@ -11,19 +11,14 @@ public class EnemyCollision : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Bullet"){
+        if (other.gameObject.tag.Equals("Bullet")){
+            print("Enemy OnTriggerEnter2D");
             BulletStats bulletStats = other.GetComponent<BulletStats>();
-            float dmg = bulletStats.dmg;
-            healthController.TakeDamage(dmg);
+            if (bulletStats != null){
+                float dmg = bulletStats.dmg;
+                healthController.TakeDamage(dmg);
+            }
         }
-
-        // if (other.gameObject.tag == "FlameThrow"){  //This method checking in Particle System.
-        //     FlameStats flameStats = other.GetComponent<FlameStats>();
-        //     float dmg = flameStats.GetDmg();
-        //     healthController.TakeDamage(dmg);
-        //     // float burnDmg = flameStats.GetBurnDmg();
-        //     // StartCoroutine(TakeBurnDamge(burnDmg));
-        // }
     }
 
     // IEnumerator TakeBurnDamge(float dmg){
@@ -35,11 +30,5 @@ public class EnemyCollision : MonoBehaviour
     //         healthController.TakeDamage(deltaDmg);
     //         yield return new WaitForSeconds(deltaTime);
     //     }
-    //     // while (time < duration){
-    //     //     time += deltaTime;
-    //     //     healthBarController.TakeDamage(deltaDmg);
-    //     //     // Debug.Log("Take dmg " + deltaDmg);
-    //     //     yield return new WaitForSeconds(deltaTime);
-    //     // }
     // }
 }

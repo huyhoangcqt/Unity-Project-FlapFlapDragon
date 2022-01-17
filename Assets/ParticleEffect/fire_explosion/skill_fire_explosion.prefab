@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 573444521347839932}
   - component: {fileID: 573444521347839930}
   - component: {fileID: 573444521347839931}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: circle_wave
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3639,9 +3639,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -3709,7 +3709,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3817,7 +3817,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4849,9 +4849,9 @@ GameObject:
   - component: {fileID: 573444521896721877}
   - component: {fileID: 573444521896721875}
   - component: {fileID: 573444521896721876}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: smoke
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9678,9 +9678,9 @@ GameObject:
   - component: {fileID: 573444521936621487}
   - component: {fileID: 573444521936621485}
   - component: {fileID: 573444521936621486}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: trail
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14431,9 +14431,9 @@ GameObject:
   - component: {fileID: 573444521975977891}
   - component: {fileID: 573444521975977889}
   - component: {fileID: 573444521975977890}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: circle_flame
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18059,9 +18059,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -18129,7 +18129,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -18237,7 +18237,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -19270,9 +19270,9 @@ GameObject:
   - component: {fileID: 573444522927144091}
   - component: {fileID: 573444522927144092}
   - component: {fileID: 573444522927144089}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fireball_03_small
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22896,11 +22896,11 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
-    multiplyColliderForceByParticleSize: 0
-    multiplyColliderForceByParticleSpeed: 0
+    multiplyColliderForceByParticleSize: 1
+    multiplyColliderForceByParticleSpeed: 1
     multiplyColliderForceByCollisionAngle: 1
     plane0: {fileID: 0}
     plane1: {fileID: 0}
@@ -22964,7 +22964,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -23072,11 +23072,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -24123,9 +24123,9 @@ GameObject:
   - component: {fileID: 2620482237749232816}
   - component: {fileID: 2620482237749232818}
   - component: {fileID: 2620482237749232817}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: center
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28952,9 +28952,9 @@ GameObject:
   - component: {fileID: 2620482237827526608}
   - component: {fileID: 2620482237827526610}
   - component: {fileID: 2620482237827526609}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fireball_charging
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28986,7 +28986,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -33785,9 +33785,9 @@ GameObject:
   - component: {fileID: 2620482238797757613}
   - component: {fileID: 2620482238797757615}
   - component: {fileID: 2620482238797757614}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: impact
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38614,9 +38614,9 @@ GameObject:
   - component: {fileID: 2620482238969440521}
   - component: {fileID: 2620482238969440532}
   - component: {fileID: 2620482238969440523}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: particle
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38645,7 +38645,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 5
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -43443,9 +43443,9 @@ GameObject:
   - component: {fileID: 8215824738030058702}
   - component: {fileID: 4214079304250274338}
   - component: {fileID: 5127065870746375076}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: vfx_trail
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48294,6 +48294,71 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &3624719796242119940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7123601434155912204}
+  - component: {fileID: 5943472751817756140}
+  - component: {fileID: 6557154347604276636}
+  m_Layer: 11
+  m_Name: Collider1
+  m_TagString: Bullet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7123601434155912204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624719796242119940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7060669725620711464}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &5943472751817756140
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624719796242119940}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.2
+--- !u!114 &6557154347604276636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624719796242119940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9db19e4a0c2aa4a9aad8fe1657fb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dmgPercent: 1000
+  _burnDmgPercent: 0
+  _duration: 0
+  _speed: 0
+  _element: 
 --- !u!1 &3656469644207348427
 GameObject:
   m_ObjectHideFlags: 0
@@ -48305,9 +48370,9 @@ GameObject:
   - component: {fileID: 3656469644207348428}
   - component: {fileID: 3656469644207348430}
   - component: {fileID: 3656469644207348429}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: beam
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53116,9 +53181,9 @@ GameObject:
   - component: {fileID: 3656469644280826596}
   - component: {fileID: 3656469644280826598}
   - component: {fileID: 3656469644280826597}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: spark
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58033,6 +58098,122 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &4866425860544905721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4673630866776620944}
+  - component: {fileID: 7071640313670407377}
+  - component: {fileID: 5422407775566941219}
+  - component: {fileID: 8368409441041379751}
+  - component: {fileID: 3274488304436571484}
+  - component: {fileID: 2176139288170947413}
+  m_Layer: 11
+  m_Name: Collider2
+  m_TagString: Bullet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4673630866776620944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866425860544905721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7060669725620711464}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7071640313670407377
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866425860544905721}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.85
+--- !u!114 &5422407775566941219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866425860544905721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9db19e4a0c2aa4a9aad8fe1657fb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dmgPercent: 2000
+  _burnDmgPercent: 0
+  _duration: 0
+  _speed: 0
+  _element: 
+--- !u!58 &8368409441041379751
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866425860544905721}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
+--- !u!58 &3274488304436571484
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866425860544905721}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
+--- !u!58 &2176139288170947413
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866425860544905721}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &7060669725620711465
 GameObject:
   m_ObjectHideFlags: 0
@@ -58044,9 +58225,10 @@ GameObject:
   - component: {fileID: 7060669725620711464}
   - component: {fileID: 101021148723341733}
   - component: {fileID: 7984278195696155571}
-  m_Layer: 0
+  - component: {fileID: 4453876556372344219}
+  m_Layer: 11
   m_Name: skill_fire_explosion
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58067,6 +58249,8 @@ Transform:
   - {fileID: 7836250383217854623}
   - {fileID: 7836250384295177331}
   - {fileID: 7836250383888502482}
+  - {fileID: 7123601434155912204}
+  - {fileID: 4673630866776620944}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58105,7 +58289,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   duration: 10
-  player: {fileID: 0}
+  player: {fileID: 6547528404351598840, guid: d540255b2934ec94e8c7a6c4ad09081b, type: 3}
+--- !u!114 &4453876556372344219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7060669725620711465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccc33c703995284884f9a90ae61898b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7836250383217854616
 GameObject:
   m_ObjectHideFlags: 0
@@ -58117,9 +58313,9 @@ GameObject:
   - component: {fileID: 7836250383217854623}
   - component: {fileID: 7836250383217854621}
   - component: {fileID: 7836250383217854622}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: imploding
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62949,9 +63145,9 @@ GameObject:
   - component: {fileID: 7836250383251335706}
   - component: {fileID: 7836250383251335704}
   - component: {fileID: 7836250383251335705}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire_spark
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67885,9 +68081,9 @@ GameObject:
   - component: {fileID: 7836250383445048460}
   - component: {fileID: 7836250383445048450}
   - component: {fileID: 7836250383445048451}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: circle
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72812,9 +73008,9 @@ GameObject:
   - component: {fileID: 7836250383680654879}
   - component: {fileID: 7836250383680654877}
   - component: {fileID: 7836250383680654878}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: beam
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77632,9 +77828,9 @@ GameObject:
   - component: {fileID: 7836250383888502482}
   - component: {fileID: 7836250383888502480}
   - component: {fileID: 7836250383888502481}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: exploding
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81309,8 +81505,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -81377,7 +81573,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -81485,11 +81681,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -82517,9 +82713,9 @@ GameObject:
   - component: {fileID: 7836250384163867400}
   - component: {fileID: 7836250384163867406}
   - component: {fileID: 7836250384163867407}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: spark
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87619,9 +87815,9 @@ GameObject:
   - component: {fileID: 7836250384295177331}
   - component: {fileID: 7836250384295177329}
   - component: {fileID: 7836250384295177330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mid
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92610,9 +92806,9 @@ GameObject:
   - component: {fileID: 7836250384461108268}
   - component: {fileID: 7836250384461108258}
   - component: {fileID: 7836250384461108259}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: line
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92641,7 +92837,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -97546,9 +97742,9 @@ GameObject:
   - component: {fileID: 7836250384503869407}
   - component: {fileID: 7836250384503869405}
   - component: {fileID: 7836250384503869406}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: smoke
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102357,9 +102553,9 @@ GameObject:
   - component: {fileID: 7836250384685178196}
   - component: {fileID: 7836250384685178186}
   - component: {fileID: 7836250384685178187}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: round_smoke
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107293,9 +107489,9 @@ GameObject:
   - component: {fileID: 7836250384793070780}
   - component: {fileID: 7836250384793070770}
   - component: {fileID: 7836250384793070771}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: smoke
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112104,9 +112300,9 @@ GameObject:
   - component: {fileID: 7836250384861969980}
   - component: {fileID: 7836250384861969970}
   - component: {fileID: 7836250384861969971}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: impact
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

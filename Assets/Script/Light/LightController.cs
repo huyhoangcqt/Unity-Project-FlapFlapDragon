@@ -8,6 +8,7 @@ public class LightController : Singleton<LightController>
     private GameObject worldLight;
     private Light2D globalLight;
     private float tempIntensity;
+    [SerializeField]private GlowGrassController grassController;
 
     private void Start(){
         worldLight = GameObject.Find("WorldLight");
@@ -19,10 +20,12 @@ public class LightController : Singleton<LightController>
     public void Darken(){
         tempIntensity = globalLight.intensity;
         FadeIntensity(globalLight, 0.1f, 1f);
+        grassController.Darken();
     }
 
     public void Recover(){
         FadeIntensity(globalLight, tempIntensity, 2f);
+        grassController.Recover();
     }
 
     public void FadeIntensity(Light2D light, float des, float duration){
