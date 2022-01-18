@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     [SerializeField] private int _hp;
-    [SerializeField] private int _mn;
+    [SerializeField] private int _mp;
     [SerializeField] private int _dmg;
     [SerializeField] private int _spe;
 
@@ -22,11 +22,11 @@ public class Stats : MonoBehaviour
         }
         set { _hp = value; }
     }
-    public int mn{
+    public int mp{
         get {
-            return _mn;
+            return _mp;
         }
-        set { _mn = value;}
+        set { _mp = value;}
     }
     public int dmg{
         get {

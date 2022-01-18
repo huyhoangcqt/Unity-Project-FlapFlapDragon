@@ -9,9 +9,9 @@ public class BatStats : Stats
         if (hp == 0){
             hp = 20;
         }
-        if (mn < 0){ mn = 0;}
-        if (mn == 0){
-            mn = 10;
+        if (mp < 0){ mp = 0;}
+        if (mp == 0){
+            mp = 10;
         }
         if (dmg < 0){ dmg = 0;}
         if (dmg == 0){

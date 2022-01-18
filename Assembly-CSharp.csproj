@@ -83,6 +83,7 @@
      <Compile Include="Assets\Script\Playerground\Player\Others\CheckPoint.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Others\GeneralInfor.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Others\HealthController.cs" />
+     <Compile Include="Assets\Script\Playerground\Player\Others\ManaController.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Others\PlayerController.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Others\PlayerStats.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Others\TestAnything.cs" />
@@ -93,9 +94,10 @@
      <Compile Include="Assets\Script\Playerground\Player\Skill\FireballSkillEffect.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Skill\FlameThrowSkill.cs" />
      <Compile Include="Assets\Script\Playerground\Player\Skill\NormalSkill.cs" />
-     <Compile Include="Assets\Script\UI\BarController\Heal.cs" />
      <Compile Include="Assets\Script\UI\BarController\HealthBar.cs" />
      <Compile Include="Assets\Script\UI\BarController\HealthBarFill.cs" />
+     <Compile Include="Assets\Script\UI\BarController\ManaBar.cs" />
+     <Compile Include="Assets\Script\UI\BarController\ManaBarFill.cs" />
      <Compile Include="Assets\Script\UI\BarController\RageBar.cs" />
      <Compile Include="Assets\Script\UI\BarController\RageBarFill.cs" />
      <Compile Include="Assets\Script\UI\BarController\RageController.cs" />

@@ -280,8 +280,6 @@ GameObject:
   - component: {fileID: 5151882345565929400}
   - component: {fileID: 2767689945770360156}
   - component: {fileID: 6328515498091561760}
-  - component: {fileID: 582169933}
-  - component: {fileID: 582169932}
   m_Layer: 5
   m_Name: RageBar
   m_TagString: Untagged
@@ -422,36 +420,6 @@ MonoBehaviour:
   rageFires:
   - {fileID: 0}
   - {fileID: 3068953900574266217}
-  - {fileID: 0}
-  flameThrowButton: {fileID: 0}
---- !u!114 &582169933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6998684585330935646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a51d435ce326d848854be65b9520753, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &582169932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6998684585330935646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8534efc9a3bea1944be683f4629d34f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  left: 248
-  top: 82
-  right: 0
-  bottom: 0
 --- !u!1001 &3514489658083731285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -607,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.44
+      value: -6.4399986
       objectReference: {fileID: 0}
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}

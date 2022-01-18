@@ -247,12 +247,12 @@ GameObject:
   - component: {fileID: 7301914271818360279}
   - component: {fileID: 1728233970}
   - component: {fileID: 1728233971}
-  - component: {fileID: 3185549156512647327}
   - component: {fileID: 380516454340570072}
   - component: {fileID: 8916961996687838919}
   - component: {fileID: 3352813804930934045}
   - component: {fileID: 4952913869066495995}
   - component: {fileID: 6482708700049434645}
+  - component: {fileID: 7327845296708781616}
   m_Layer: 10
   m_Name: Spider
   m_TagString: Enemy
@@ -334,22 +334,6 @@ MonoBehaviour:
   speed: 10
   distanceToPlayer1: 7
   distanceToPlayer2: 5
---- !u!114 &3185549156512647327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5753051115336823933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355071034e38126449969fad1866d58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: 20
-  _mn: 10
-  _dmg: 10
-  _spe: 10
 --- !u!70 &380516454340570072
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -423,6 +407,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008c6b42fba59e64aaf3bae880cb2091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7327845296708781616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753051115336823933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31982ee0b323da14ba28fceefd410554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 20
+  _mp: 0
+  _dmg: 10
+  _spe: 10
 --- !u!1 &5753051115555720995
 GameObject:
   m_ObjectHideFlags: 0

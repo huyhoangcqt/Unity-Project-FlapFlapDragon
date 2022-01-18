@@ -12,11 +12,6 @@ public class HealthBar : MonoBehaviour
 
     private float crrHP = 1, maxHP = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     public void SetMaxHealth(float maxHP){
         this.maxHP = maxHP;
         slider.maxValue = maxHP;

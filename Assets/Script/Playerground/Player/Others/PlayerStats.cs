@@ -9,9 +9,9 @@ public class PlayerStats : Stats
         if (hp == 0){
             hp = 200;
         }
-        if (mn < 0){ mn = 0;}
-        if (mn == 0){
-            mn = 50;
+        if (mp < 0){ mp = 0;}
+        if (mp == 0){
+            mp = 100;
         }
         if (dmg < 0){ dmg = 0;}
         if (dmg == 0){

@@ -530,11 +530,11 @@ GameObject:
   - component: {fileID: 7233107889099830156}
   - component: {fileID: 7233107889099830158}
   - component: {fileID: 7233107889099830159}
-  - component: {fileID: 536434747915745993}
   - component: {fileID: 931551561713211470}
   - component: {fileID: 1991515466}
   - component: {fileID: 1991515467}
   - component: {fileID: 1688759904}
+  - component: {fileID: 8042934821666124042}
   m_Layer: 10
   m_Name: Bat
   m_TagString: Enemy
@@ -616,22 +616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
---- !u!114 &536434747915745993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7233107889099830162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355071034e38126449969fad1866d58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: 20
-  _mn: 10
-  _dmg: 10
-  _spe: 10
 --- !u!58 &931551561713211470
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -688,6 +672,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb24455701e502459483ad69ebecf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8042934821666124042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233107889099830162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639efedb08100084eb47a686b1ad852e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 20
+  _mp: 0
+  _dmg: 10
+  _spe: 10
 --- !u!1 &8250332091450321799
 GameObject:
   m_ObjectHideFlags: 0

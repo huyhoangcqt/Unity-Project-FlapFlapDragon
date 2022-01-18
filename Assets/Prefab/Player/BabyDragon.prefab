@@ -915,7 +915,6 @@ GameObject:
   - component: {fileID: 6547528404351598843}
   - component: {fileID: 5301281051903283040}
   - component: {fileID: 5301281051903283047}
-  - component: {fileID: 5301281051903283043}
   - component: {fileID: 5301281051903283045}
   - component: {fileID: 5150423179029338621}
   - component: {fileID: 8185884258421302131}
@@ -926,6 +925,8 @@ GameObject:
   - component: {fileID: 6547528404351598841}
   - component: {fileID: 6547528404351598837}
   - component: {fileID: 2433073027254019544}
+  - component: {fileID: 197170876471630309}
+  - component: {fileID: 8159206265545825652}
   m_Layer: 0
   m_Name: BabyDragon
   m_TagString: Player
@@ -1080,22 +1081,6 @@ MonoBehaviour:
   skill3Position_y: -0.5
   flashEffect: {fileID: 6218179080860203331, guid: 80dbf6cd97c33554785ee137a00dcb79,
     type: 3}
---- !u!114 &5301281051903283043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6547528404351598840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355071034e38126449969fad1866d58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: 200
-  _mn: 50
-  _dmg: 10
-  _spe: 10
 --- !u!114 &5301281051903283045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,7 +1095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   healthBarFill: {fileID: 0}
-  stats: {fileID: 5301281051903283043}
+  stats: {fileID: 0}
 --- !u!70 &5150423179029338621
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1184,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde338df27f9a064fa41188ee3513bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 0.2
 --- !u!114 &6547528404351598836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,7 +1223,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093e473d194c15441b8c9966ce2cc9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.2
+  duration: 0.15
+--- !u!114 &197170876471630309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547528404351598840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1eefb7133d250b4aac88a579368680f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 811325485743472731, guid: 5b2cac6717f8ed94f8e41a008de4fca1, type: 3}
+  bulletSrc: {fileID: 9034992938532005210}
+--- !u!114 &8159206265545825652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547528404351598840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d789cebe4a1a41910e534cdc357ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 200
+  _mp: 100
+  _dmg: 10
+  _spe: 10
 --- !u!1 &6547528404360260327
 GameObject:
   m_ObjectHideFlags: 0
