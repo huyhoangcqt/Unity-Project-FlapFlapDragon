@@ -4882,6 +4882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf77e18ca7caf148b155551aa064d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 1570160981439283037, guid: 7e6102a53b90d344e8e5797f812a7548,
+    type: 3}
 --- !u!114 &403604113105477524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4909,7 +4911,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

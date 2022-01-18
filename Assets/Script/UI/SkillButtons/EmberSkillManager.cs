@@ -9,16 +9,15 @@ using UnityEngine.UI;
 public class EmberSkillManager : Singleton<EmberSkillManager>
 {
     private EmberSkillEffect emberEffect;
-    [SerializeField] private float duration; //Approximately 0.1 second
+    [SerializeField] private float duration; //Default time: 0.15 = duration time of animation Attack
     private float attackTime;
 
     private void Start() {
         emberEffect = GetComponent<EmberSkillEffect>();
         if (duration == 0f){
-            duration = 0.15f; //= duration time of animation Attack
+            duration = 0.15f;
         }
         attackTime = 0f;
-        print("DeltaTime:" + Time.deltaTime);
     }
 
     // Start is called before the first frame update

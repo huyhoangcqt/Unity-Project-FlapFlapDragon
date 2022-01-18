@@ -45,6 +45,7 @@
      <Compile Include="Assets\ParticleEffect\fire_explosion\script\ExplosionController.cs" />
      <Compile Include="Assets\ParticleEffect\fire_explosion\script\ParticleSystemProcessing.cs" />
      <Compile Include="Assets\ParticleEffect\fireball_skill\script\FireballController.cs" />
+     <Compile Include="Assets\ParticleEffect\smoke_explosion\script\SmokeExplosionController.cs" />
      <Compile Include="Assets\Script\Background\BackgroundScrolling.cs" />
      <Compile Include="Assets\Script\Background\GlowGrass\GlowGrass.cs" />
      <Compile Include="Assets\Script\Background\GlowGrass\GlowGrassController.cs" />
