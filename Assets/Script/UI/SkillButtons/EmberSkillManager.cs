@@ -2,53 +2,41 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/**
+ * * Normal attack
+*/
 public class EmberSkillManager : Singleton<EmberSkillManager>
 {
-    [SerializeField] private EmberSkillEffect emberEffect;
-    [SerializeField] private ButtonController button;
-    [SerializeField] private float cooldownTime;
+    private EmberSkillEffect emberEffect;
+    [SerializeField] private float duration; //Approximately 0.15 second
 
+    private void Start() {
+        emberEffect = GetComponent<EmberSkillEffect>();
+        if (duration == 0){
+            duration = 0.15f;
+        }
+    }
 
     // Start is called before the first frame update
-    public void Process(Touch touch){   
-        if (button.gameObject.GetComponent<Button>().enabled) {
+    public void Process(Touch touch){  
+        if (touch.phase == TouchPhase.Began){
             emberEffect.Process(touch);
             OnEmberStart();
         }
-        button.isEnoughEnergy = true;
     }
 
     public void OnEmberStart(){
         emberEffect.OnEmberStart();
-        button.isActive = false;
-        CooldownStart();
+        StartCoroutine(EmberDuration(duration));
     }
 
     public void OnEmberEnd(){
         emberEffect.OnEmberEnd();
     }
 
-    private  IEnumerator StartCooldown(float time){
-        button.UpdateCooldownText(time, "N0");
-        while (time > 1f){
-            yield return new WaitForSeconds(1f);
-            time -= 1f;
-            button.UpdateCooldownText(time, "N0");
-        }
-        while (time > 0f){
-            yield return new WaitForSeconds(0.1f);
-            time -= 0.1f;
-            button.UpdateCooldownText(time, "N1");
-        }
-        CooldownEnd();
-    }
-
-    internal void CooldownEnd(){
-        button.CooldownEffectEnd();
-    }
-
-    private void CooldownStart(){
-        button.CooldownEffectStart(cooldownTime);
-        StartCoroutine(StartCooldown(cooldownTime));
+    IEnumerator EmberDuration(float durationTime){
+        yield return new WaitForSeconds(durationTime);
+        OnEmberEnd();
     }
 }

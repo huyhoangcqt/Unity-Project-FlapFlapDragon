@@ -7,18 +7,14 @@ public class FireBullet : MonoBehaviour
     private Animator anim;
     private Rigidbody2D body;
     public GameObject explosionEff;
+    private Collider2D col;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        col = GetComponent<Collider2D>();
     }
 
     public void ChangeState(){
@@ -30,7 +26,7 @@ public class FireBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag != "Player"){
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Ground"){
             Instantiate(explosionEff, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

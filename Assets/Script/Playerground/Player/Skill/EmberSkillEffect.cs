@@ -31,24 +31,19 @@ public class EmberSkillEffect : MonoBehaviour
             direction.z = 0;
             direction = direction.normalized;
             rotation = Quaternion.LookRotation(direction, Vector3.right);
-            // rotation = Quaternion.FromToRotation(direction, Vector3.right);
     }
 
     public void OnEmberStart(){
         anim.SetBool("isAttack", true);
+        Shooter();
         temp_rotation = head.transform.rotation;
-        // Quaternion rotation = new Quaternion(0, 0, 30, 1);
         head.transform.rotation = rotation;
     }
 
     public void OnEmberEnd(){
         anim.SetBool("isAttack", false);
-        // head.transform.rotation = temp_rotation;
     }
 
-    /*
-    * * Called in Animation event;
-    */
     public void Shooter(){
         GameObject bullet_instance = Instantiate(bullet, bulletSrc.transform.position, rotation);
         bullet_instance.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;

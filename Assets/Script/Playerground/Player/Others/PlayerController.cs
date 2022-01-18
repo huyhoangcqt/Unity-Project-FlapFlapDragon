@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public enum PlayerStatus{
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public static bool onGround = false;
-    private bool inputEnabled = true;
+    private bool attackInputEnabled = true, inputEnabled = true;
     private Animator anim;
     // public TutorialManager tutorialManager;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool isHoldingOnLeft;
 
     [SerializeField]private float dashForce, dragForce;
-    [SerializeField]private EmberSkillManager emberSkillManager;
+    private EmberSkillManager emberSkillManager;
 
     private Rigidbody2D rgbd2D;
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         rgbd2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); 
+        emberSkillManager = GetComponent<EmberSkillManager>();
         InitializeParameters();
     }
 
@@ -89,10 +91,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void EnableInputGetting(){
-        inputEnabled = true;
+    public void EnableAttack(){
+        attackInputEnabled = true;
     }
 
+    public void DisableAttack(){
+        attackInputEnabled = false;
+    }
+
+    public void EnabledInputGetting(){
+        inputEnabled = true;
+    }
     public void DisableInputGetting(){
         inputEnabled = false;
     }
@@ -132,8 +141,10 @@ public class PlayerController : MonoBehaviour
                     }
                     //If Touch at right side => shooting
                     else {
-                        if (touch.phase == TouchPhase.Ended){
-                            emberSkillManager.Process(touch);
+                        if (attackInputEnabled){
+                            if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId)){
+                                emberSkillManager.Process(touch);
+                            }
                         }
                     }
                 };
@@ -163,13 +174,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /**
+     * * Fireball controller functions
+    */
+   public void FireballStart(){
+       DisableAttack();
+   }
+
+   public void FireballEnd(){
+       EnableAttack();
+   }
+
     private float tempGravityScale;
     /*
     * * Dash movement control function
     */
     public void PreDashMovement(){
+        DisableAttack();
         DisableInputGetting();
-
         rgbd2D.velocity = Vector3.zero;
         tempGravityScale = rgbd2D.gravityScale;
         rgbd2D.gravityScale = 0f;
@@ -182,8 +204,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void DashMovementOff(){
-        EnableInputGetting();
-
+        EnableAttack();
+        EnabledInputGetting();
         rgbd2D.gravityScale = tempGravityScale;
     }
 
@@ -196,6 +218,7 @@ public class PlayerController : MonoBehaviour
     */
     [SerializeField] private float skill3Position_y;
     public void PreExplosionMovement(){
+        DisableAttack();
         DisableInputGetting();
         rgbd2D.velocity = Vector3.zero;
         tempGravityScale = rgbd2D.gravityScale;
@@ -215,7 +238,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void ExplosionMovementOff(){
-        EnableInputGetting();
+        EnableAttack();
+        EnabledInputGetting();
         rgbd2D.gravityScale = tempGravityScale;
     }
 
