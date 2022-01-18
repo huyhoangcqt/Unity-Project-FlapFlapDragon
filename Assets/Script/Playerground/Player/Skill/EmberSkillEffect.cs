@@ -31,11 +31,11 @@ public class EmberSkillEffect : MonoBehaviour
             direction.z = 0;
             direction = direction.normalized;
             rotation = Quaternion.LookRotation(direction, Vector3.right);
+        Shooter();
     }
 
     public void OnEmberStart(){
         anim.SetBool("isAttack", true);
-        Shooter();
         temp_rotation = head.transform.rotation;
         head.transform.rotation = rotation;
     }

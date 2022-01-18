@@ -9,34 +9,43 @@ using UnityEngine.UI;
 public class EmberSkillManager : Singleton<EmberSkillManager>
 {
     private EmberSkillEffect emberEffect;
-    [SerializeField] private float duration; //Approximately 0.15 second
+    [SerializeField] private float duration; //Approximately 0.1 second
+    private float attackTime;
 
     private void Start() {
         emberEffect = GetComponent<EmberSkillEffect>();
-        if (duration == 0){
-            duration = 0.15f;
+        if (duration == 0f){
+            duration = 0.15f; //= duration time of animation Attack
         }
+        attackTime = 0f;
+        print("DeltaTime:" + Time.deltaTime);
     }
 
     // Start is called before the first frame update
     public void Process(Touch touch){  
         if (touch.phase == TouchPhase.Began){
             emberEffect.Process(touch);
-            OnEmberStart();
+            if (attackTime <= 0f){                
+                OnEmberStart();
+            }
+            attackTime += duration;
         }
     }
 
     public void OnEmberStart(){
         emberEffect.OnEmberStart();
-        StartCoroutine(EmberDuration(duration));
+    }
+
+    private void Update(){
+        if (attackTime <= 0f){
+            OnEmberEnd();
+        }
+        else {
+            attackTime -= Time.deltaTime;
+        }
     }
 
     public void OnEmberEnd(){
         emberEffect.OnEmberEnd();
-    }
-
-    IEnumerator EmberDuration(float durationTime){
-        yield return new WaitForSeconds(durationTime);
-        OnEmberEnd();
     }
 }
