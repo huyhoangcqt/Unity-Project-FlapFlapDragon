@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : Stats
 {
+    private Stats stats;
     protected override void Initialize(){
         if (hp < 0){ hp = 0;}
         if (hp == 0){

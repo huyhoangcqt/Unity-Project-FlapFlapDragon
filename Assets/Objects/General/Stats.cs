@@ -12,7 +12,8 @@ public class Stats : MonoBehaviour
     protected virtual void Initialize(){
 
     }
-    public void Awake(){
+    
+    private void Awake(){
         Initialize();
     }
 

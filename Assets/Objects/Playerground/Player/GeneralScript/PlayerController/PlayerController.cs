@@ -37,9 +37,11 @@ public class PlayerController : MonoBehaviour
     private EmberSkillManager emberSkillManager;
 
     private Rigidbody2D rgbd2D;
-    // Start is called before the first frame update
+
+    private ManaController mpController;
     private void Start()
     {
+        mpController = GetComponent<ManaController>();
         rgbd2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); 
         emberSkillManager = GetComponent<EmberSkillManager>();
@@ -148,6 +150,17 @@ public class PlayerController : MonoBehaviour
                         }
                     }
                 };
+            }
+            if (Input.GetMouseButtonDown(0)){
+                bool result = mpController.ConsumeMana(10);
+                if (result){
+                    //effect consume;
+                }
+            }
+            else {
+                if (Input.GetMouseButtonDown(1)){
+                    mpController.RecoveryMana(10);
+                }
             }
         }
     }

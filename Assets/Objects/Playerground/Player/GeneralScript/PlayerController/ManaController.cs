@@ -6,21 +6,21 @@ public class ManaController : MonoBehaviour
 {
     private int maxMP = 100;
     private int crrMP = 0;
-    public ManaBar manaBar;
+    [SerializeField] private ManaBar manaBar;
+    private Animator manaBarAnim;
+    private Stats stats;        //stats of target
 
-    public GameObject manaBarFill;
-    private Animator manaBarAnim, playerAnim;
-    public Stats stats;
     // Start is called before the first frame update
     void Start()
     {
+        stats = GetComponent<Stats>();
+
         maxMP = stats.mp;
         crrMP = maxMP;
         manaBar.SetMaxMana(maxMP);
         manaBar.SetCurrentMana(crrMP);
 
-        manaBarAnim = manaBarFill.gameObject.GetComponent<Animator>();
-        playerAnim = GetComponent<Animator>();
+        manaBarAnim = manaBar.gameObject.GetComponent<Animator>();
     }
 
     public void RecoveryMana(int mp){
@@ -29,19 +29,25 @@ public class ManaController : MonoBehaviour
             crrMP = maxMP;
         }
         manaBar.SetCurrentMana(crrMP);
-        // manaBarAnim.SetBool("isRecoverMp", true);
+        manaBarAnim.SetBool("isRecover", true);
+        StartCoroutine(RecoveryAnimationEnd());
     }
 
-    public void ConsumeMana(int mp){
-        crrMP -= mp;
-        if (crrMP < 0){
-            crrMP = 0;
+    private IEnumerator RecoveryAnimationEnd(){
+        yield return new WaitForSeconds(0.2f); //default time for mp recover animation
+        manaBarAnim.SetBool("isRecover", false);
+    }
+
+    public bool ConsumeMana(int mp){
+        if (crrMP < mp){
+            return false;
+            //animation for unenable consume mana;
         }
-        manaBar.SetCurrentMana(crrMP);
-        Debug.Log("Consume Mana: " + mp);
-    }
-
-    public int getCurrentManaPoint(){
-        return crrMP;
+        else {
+            crrMP -= mp;
+            manaBar.SetCurrentMana(crrMP);
+            Debug.Log("Consume Mana: " + mp);
+            return true;
+        }
     }
 }
