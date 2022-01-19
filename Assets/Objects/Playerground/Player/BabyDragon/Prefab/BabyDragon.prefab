@@ -915,7 +915,6 @@ GameObject:
   - component: {fileID: 6547528404351598843}
   - component: {fileID: 5301281051903283040}
   - component: {fileID: 5301281051903283047}
-  - component: {fileID: 5301281051903283045}
   - component: {fileID: 5150423179029338621}
   - component: {fileID: 8185884258421302131}
   - component: {fileID: 5301281051903283037}
@@ -1081,21 +1080,6 @@ MonoBehaviour:
   skill3Position_y: -0.5
   flashEffect: {fileID: 6218179080860203331, guid: 80dbf6cd97c33554785ee137a00dcb79,
     type: 3}
---- !u!114 &5301281051903283045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6547528404351598840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2275cc7a6133c44aaa02019aab9bc43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  healthBarFill: {fileID: 0}
-  stats: {fileID: 0}
 --- !u!70 &5150423179029338621
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

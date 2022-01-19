@@ -38,10 +38,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rgbd2D;
 
-    private ManaController mpController;
+    [SerializeField]private ManaController mpController;
     private void Start()
     {
-        mpController = GetComponent<ManaController>();
         rgbd2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); 
         emberSkillManager = GetComponent<EmberSkillManager>();
@@ -152,10 +151,9 @@ public class PlayerController : MonoBehaviour
                 };
             }
             if (Input.GetMouseButtonDown(0)){
-                bool result = mpController.ConsumeMana(10);
-                if (result){
-                    //effect consume;
-                }
+                if (mpController.CheckingMana(10)){
+                    mpController.ConsumeMana(10);
+                };
             }
             else {
                 if (Input.GetMouseButtonDown(1)){

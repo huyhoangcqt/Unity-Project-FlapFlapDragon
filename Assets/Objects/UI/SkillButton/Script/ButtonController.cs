@@ -2,6 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 
+[System.Serializable]
+public struct Condition{
+    public int rage;
+    public int mana;
+} 
+
 public class ButtonController : MonoBehaviour
 {
     private float _bannedTime, _cooldownTime;
@@ -27,6 +33,10 @@ public class ButtonController : MonoBehaviour
     protected ParticleController particleController;
     protected GameObject inactive, cooldownText, banned;
     private Text cdText;
+    [SerializeField] private Condition condition;
+    [SerializeField] private ManaController mpController;
+    [SerializeField] private RageController rageController;
+
     void Start(){
         inactive = FindGameObject("inactive");
         cooldownText = FindGameObject("cooldownText");
@@ -35,6 +45,16 @@ public class ButtonController : MonoBehaviour
         particleController = flashEffect.GetComponent<ParticleController>();
         cdText = cooldownText.GetComponent<Text>();
         isBanned = false; isCooldown = false; isActive = true; isEnoughEnergy = true;
+    }
+
+       private bool CheckingEnergy(){
+        if (!mpController.CheckingMana(condition.mana)){
+            return false;
+        }
+        if (!rageController.CheckingRage(condition.rage)){
+            return false;
+        }
+        return true;
     }
 
     GameObject FindGameObject(string objectName){
@@ -88,6 +108,7 @@ public class ButtonController : MonoBehaviour
 
     private int temp = 0;
     public void Update(){
+        isEnoughEnergy = CheckingEnergy();
         if (bannedTime > 0){
             bannedTime -= Time.deltaTime;
             if (bannedTime <= 0){
@@ -102,14 +123,15 @@ public class ButtonController : MonoBehaviour
         };
         if (!isActive){
             if (temp < 3){
-               //print(temp.ToString() + ": isCooldown: " + isCooldown.ToString());
-               //print(temp.ToString() + ": isBanned: " + isBanned.ToString());
-               //print(temp.ToString() + ": isEnoughEnergy: " + isEnoughEnergy.ToString());
                 temp++;
             }
             if (!isCooldown && !isBanned && isEnoughEnergy){
                 ActiveButton();
             }
+        }
+        if (isActive && !isEnoughEnergy){
+            print("Disable Button");
+            DisableButton();
         }
     }
 

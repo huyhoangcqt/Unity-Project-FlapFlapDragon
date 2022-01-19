@@ -377,7 +377,7 @@ PrefabInstance:
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}
@@ -939,6 +939,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229172462}
   m_CullTransparentMesh: 0
+--- !u!114 &231455279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2767689945770360156, guid: b8958d17492a2ce4d84e6cb12f6ea657,
+    type: 3}
+  m_PrefabInstance: {fileID: 7111784591936763988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff984831e9d1304e957afa75072a586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &274273609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2061,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540331899}
   m_CullTransparentMesh: 0
+--- !u!1 &596035859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3068953900574266217, guid: b8958d17492a2ce4d84e6cb12f6ea657,
+    type: 3}
+  m_PrefabInstance: {fileID: 7111784591936763988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &604850086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,6 +3703,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1697908713}
   - {fileID: 1461989645}
   - {fileID: 5132220837398676123}
   - {fileID: 146075406}
@@ -5106,7 +5125,7 @@ PrefabInstance:
     - target: {fileID: 2616867361695952115, guid: 02f28643de801544080c5a7afd8d199a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2616867361695952115, guid: 02f28643de801544080c5a7afd8d199a,
         type: 3}
@@ -5879,6 +5898,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1693961902}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1697908712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697908713}
+  - component: {fileID: 1697908716}
+  - component: {fileID: 1697908715}
+  - component: {fileID: 1697908714}
+  m_Layer: 0
+  m_Name: BarController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697908713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697908712}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -205.44003, y: -24, z: -3360}
+  m_LocalScale: {x: 48, y: 48, z: 48}
+  m_Children: []
+  m_Father: {fileID: 896489260}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697908714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697908712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d1ad6b657c4394d8e06ba7564d4a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rageBar: {fileID: 231455279}
+  rageBarFill: {fileID: 2119765177}
+  rageFires:
+  - {fileID: 342368199}
+  - {fileID: 596035859}
+--- !u!114 &1697908715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697908712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b2280fb3b8289408ad6254afb38bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaBar: {fileID: 1530233183}
+  stats: {fileID: 197170876471630320}
+--- !u!114 &1697908716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697908712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2275cc7a6133c44aaa02019aab9bc43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1461989646}
+  healthBarFill: {fileID: 960420736}
+  stats: {fileID: 197170876471630320}
 --- !u!1001 &1738571242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6425,8 +6523,8 @@ MonoBehaviour:
   playerController: {fileID: 1292793390340560507}
   fireballEffect: {fileID: 197170876471630309}
   button: {fileID: 1830419421}
-  durationTime: 0.25
   cooldownTime: 5
+  durationTime: 0.25
 --- !u!114 &1830419418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6493,6 +6591,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcf27ceadf682e47b47ce762bf29c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  condition:
+    rage: 0
+    mana: 20
+  mpController: {fileID: 1697908715}
+  rageController: {fileID: 1697908714}
 --- !u!222 &1830419422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7257,6 +7360,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1813953414}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2119765177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6960533465670398517, guid: b8958d17492a2ce4d84e6cb12f6ea657,
+    type: 3}
+  m_PrefabInstance: {fileID: 7111784591936763988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2120157055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7362,7 +7471,7 @@ PrefabInstance:
     - target: {fileID: 5161149587248493534, guid: 0683fdb532ededf489bc9e9ddba59523,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5161149587248493534, guid: 0683fdb532ededf489bc9e9ddba59523,
         type: 3}
@@ -7490,31 +7599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1eefb7133d250b4aac88a579368680f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &197170876471630310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197170876471630308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b2280fb3b8289408ad6254afb38bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manaBar: {fileID: 1530233183}
---- !u!114 &197170876471630312 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6547528404351598836, guid: d540255b2934ec94e8c7a6c4ad09081b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6368375448397453596}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197170876471630308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bec4dfb890c1df4d9e7cdcede3bc058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &197170876471630313 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6547528404351598837, guid: d540255b2934ec94e8c7a6c4ad09081b,
@@ -7603,7 +7687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18de6f87877b8a0478294c89af4a843b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillEffect: {fileID: 197170876471630312}
+  skillEffect: {fileID: 0}
   button: {fileID: 391336632631471099}
   playerController: {fileID: 1292793390340560507}
   durationTime: 7
@@ -7620,6 +7704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcf27ceadf682e47b47ce762bf29c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  condition:
+    rage: 0
+    mana: 50
+  mpController: {fileID: 1697908715}
+  rageController: {fileID: 1697908714}
 --- !u!114 &391336632824005930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7923,7 +8012,7 @@ PrefabInstance:
     - target: {fileID: 6581540701124638081, guid: dc9b060f0f2931d48b80a6b57d8a236f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6581540701124638081, guid: dc9b060f0f2931d48b80a6b57d8a236f,
         type: 3}
@@ -8616,21 +8705,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1521189959}
     m_Modifications:
-    - target: {fileID: 5301281051903283045, guid: d540255b2934ec94e8c7a6c4ad09081b,
+    - target: {fileID: 5301281051903283047, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
-      propertyPath: stats
+      propertyPath: mpController
       value: 
-      objectReference: {fileID: 197170876471630320}
-    - target: {fileID: 5301281051903283045, guid: d540255b2934ec94e8c7a6c4ad09081b,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1461989646}
-    - target: {fileID: 5301281051903283045, guid: d540255b2934ec94e8c7a6c4ad09081b,
-        type: 3}
-      propertyPath: healthBarFill
-      value: 
-      objectReference: {fileID: 960420736}
+      objectReference: {fileID: 1697908715}
     - target: {fileID: 6547528404351598840, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
       propertyPath: m_Name
@@ -8691,6 +8770,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8185884258421302131, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: manaController
+      value: 
+      objectReference: {fileID: 1697908715}
+    - target: {fileID: 8185884258421302131, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: healthController
+      value: 
+      objectReference: {fileID: 1697908716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d540255b2934ec94e8c7a6c4ad09081b, type: 3}
 --- !u!1001 &7111784591936763988
@@ -8723,7 +8812,7 @@ PrefabInstance:
     - target: {fileID: 4242877859964234085, guid: b8958d17492a2ce4d84e6cb12f6ea657,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4242877859964234085, guid: b8958d17492a2ce4d84e6cb12f6ea657,
         type: 3}
@@ -8815,11 +8904,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6328515498091561760, guid: b8958d17492a2ce4d84e6cb12f6ea657,
-        type: 3}
-      propertyPath: rageFires.Array.data[0]
-      value: 
-      objectReference: {fileID: 342368199}
     - target: {fileID: 6998684585330935646, guid: b8958d17492a2ce4d84e6cb12f6ea657,
         type: 3}
       propertyPath: m_Name
@@ -9056,7 +9140,6 @@ GameObject:
   - component: {fileID: 7843624661308079130}
   - component: {fileID: 8246249863417459050}
   - component: {fileID: 7843624661308079112}
-  - component: {fileID: 7843624661308079114}
   - component: {fileID: 7843624661308079115}
   m_Layer: 5
   m_Name: btn_fire_explosion
@@ -9102,25 +9185,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fae9b08b9a9ec488be14da829c2349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition:
-    rage: 100
   skillEffect: {fileID: 197170876471630313}
-  button: {fileID: 7843624661308079114}
+  button: {fileID: 7843624661308079115}
   playerController: {fileID: 1292793390340560507}
   durationTime: 10
   cooldownTime: 12
---- !u!114 &7843624661308079114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7843624661308079110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb840c6fa87c7794db00a2f9496b4112, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7843624661308079115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9133,6 +9202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcf27ceadf682e47b47ce762bf29c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  condition:
+    rage: 100
+    mana: 50
+  mpController: {fileID: 1697908715}
+  rageController: {fileID: 1697908714}
 --- !u!222 &7843624661308079130
 CanvasRenderer:
   m_ObjectHideFlags: 0

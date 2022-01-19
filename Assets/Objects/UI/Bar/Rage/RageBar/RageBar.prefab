@@ -279,7 +279,6 @@ GameObject:
   - component: {fileID: 4242877859964234085}
   - component: {fileID: 5151882345565929400}
   - component: {fileID: 2767689945770360156}
-  - component: {fileID: 6328515498091561760}
   m_Layer: 5
   m_Name: RageBar
   m_TagString: Untagged
@@ -403,23 +402,6 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 7283570650193262048}
---- !u!114 &6328515498091561760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6998684585330935646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d1ad6b657c4394d8e06ba7564d4a15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rageBar: {fileID: 2767689945770360156}
-  rageBarFill: {fileID: 6960533465670398517}
-  rageFires:
-  - {fileID: 0}
-  - {fileID: 3068953900574266217}
 --- !u!1001 &3514489658083731285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -575,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.4399986
+      value: -6.4400024
       objectReference: {fileID: 0}
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}
@@ -586,12 +568,6 @@ PrefabInstance:
     - {fileID: 1230443545, guid: 88af992111bea1940ad6571a18a0695f, type: 3}
     - {fileID: 1230443546, guid: 88af992111bea1940ad6571a18a0695f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88af992111bea1940ad6571a18a0695f, type: 3}
---- !u!1 &3068953900574266217 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1896830083379377212, guid: 88af992111bea1940ad6571a18a0695f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3514489658083731285}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5048020960617699270 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,

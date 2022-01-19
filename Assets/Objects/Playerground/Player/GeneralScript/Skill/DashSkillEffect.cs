@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DashSkillEffect : MonoBehaviour
 {
-
     private Rigidbody2D rgbd2D;
     private Animator anim;
     private GameObject dash;
@@ -17,7 +16,6 @@ public class DashSkillEffect : MonoBehaviour
         }
     }
     public void DashEffectStart(){
-        // print("Dash effect start");
         anim.SetBool("isSkill2Active", true);
         dash.SetActive(true);
     }

@@ -13,7 +13,7 @@ public class HealthController : MonoBehaviour
 
     public GameObject healthBarFill;
     private Animator healthBarAnim, playerAnim;
-    public Stats stats;
+    [SerializeField] private Stats stats;
     // Start is called before the first frame update
     void Start()
     {

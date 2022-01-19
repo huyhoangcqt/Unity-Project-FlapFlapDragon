@@ -10,6 +10,7 @@ public class DashSkillManager : MonoBehaviour
     [SerializeField]private PlayerController playerController;
     [SerializeField]private float durationTime, cooldownTime;
     private SkillManager skillManager;
+    
     public void Start(){
         skillManager = gameObject.GetComponent<SkillManager>();
     }

@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct Condition{
-    public float rage;
-} 
 public class FireExplosionSkillManager : MonoBehaviour
 {
-    [SerializeField]private Condition condition;
     [SerializeField]private ExplosionSkillEffect skillEffect;
     [SerializeField]private ButtonController button;
     [SerializeField]private PlayerController playerController;
     [SerializeField]private float durationTime, cooldownTime;
     private SkillManager skillManager;
+
     public void Start(){
         skillManager = gameObject.GetComponent<SkillManager>();
     }
@@ -49,17 +45,11 @@ public class FireExplosionSkillManager : MonoBehaviour
     }
 
     public void OnButtonClick(){
-        button.isEnoughEnergy = CheckingRagePoint();
-        //Skill Effect
         ExplosionSkillStart();
         StartCoroutine(WaitingPreExplosionSkill());
         StartCoroutine(ExplosionDuration());
         //Cooldown
         CooldownStart();
-    }
-
-    private bool CheckingRagePoint(){
-        return true;
     }
 
     private  IEnumerator StartCooldown(float time){

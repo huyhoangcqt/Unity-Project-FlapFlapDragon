@@ -11,8 +11,7 @@ private float maxRage = 100;
     private Animator rageBarAnim;
 
     public GameObject[] rageFires;
-    // public GameObject flameThrowButton;
-    // Start is called before the first frame update
+
     void Start()
     {
         maxRage = 100;
@@ -21,11 +20,8 @@ private float maxRage = 100;
         rageBar.SetCurrentRage(crrRage);
 
         rageBarAnim = rageBarFill.gameObject.GetComponent<Animator>();
-
-        // rageFires = GameObject.Find("RageFire");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (crrRage >= 100){
@@ -42,19 +38,14 @@ private float maxRage = 100;
                 rageFires[i].SetActive(false);
             }
         }
-
-        // flameThrowButton.GetComponent<FlameThrowButton>().SetActive(false);
     }
 
     private void RageFullyEvent(){
-        //Fire active
         if (rageFires.Length > 0){
             for (int i = 0; i < rageFires.Length; i++){
                 rageFires[i].SetActive(true);
             }
         }
-        //Special skill active
-        // flameThrowButton.GetComponent<FlameThrowButton>().SetActive(true);
     }
 
     public void RageUp(float amount){
@@ -64,7 +55,13 @@ private float maxRage = 100;
         }
         rageBar.SetCurrentRage(crrRage);
         rageBarAnim.SetBool("onRageUp", true);
-        // Debug.Log("Target Dmg: " + dmg);
+    }
+
+    public bool CheckingRage(int rage){
+        if (crrRage >= rage){
+            return true;
+        }
+        return false;
     }
 
     public void RageDown(float amount){

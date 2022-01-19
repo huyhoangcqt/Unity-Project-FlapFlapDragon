@@ -104,7 +104,6 @@
      <Compile Include="Assets\Objects\UI\SkillButton\Script\ButtonController.cs" />
      <Compile Include="Assets\Objects\UI\SkillButton\Script\DashSkillManager.cs" />
      <Compile Include="Assets\Objects\UI\SkillButton\Script\EmberSkillManager.cs" />
-     <Compile Include="Assets\Objects\UI\SkillButton\Script\ExplosionButtonController.cs" />
      <Compile Include="Assets\Objects\UI\SkillButton\Script\FireExplosionSkillManager.cs" />
      <Compile Include="Assets\Objects\UI\SkillButton\Script\FireballSkillManager.cs" />
      <Compile Include="Assets\Objects\UI\SkillButton\Script\FlameThrowButton.cs" />

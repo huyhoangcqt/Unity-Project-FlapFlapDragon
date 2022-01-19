@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public GameObject blood;
-    private HealthController healthController;
+    [SerializeField] private HealthController healthController;
+    [SerializeField] private ManaController manaController;
     private PlayerController playerController;
-    // Start is called before the first frame update
     private int objectGUID = 0;
     private PlayerStatus status;
     void Start()

@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class FireballSkillManager : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
     [SerializeField] private FireballSkillEffect fireballEffect;
     [SerializeField] private ButtonController button;
-    [SerializeField] private float durationTime;  //Default is 0.25f; = duration time of Animation
-    //(0.49f is Approximately 0.5f) :V . This comment is not related
-    [SerializeField] private float cooldownTime;
-    
+    [SerializeField] private float cooldownTime, durationTime;
+
     private void Start() {
         if (durationTime == 0){
             durationTime = 0.25f;
@@ -21,7 +18,6 @@ public class FireballSkillManager : MonoBehaviour
     }
 
     public void OnButtonClick(){
-        button.isEnoughEnergy = CheckingEnergy();
         FireballStart();
         CooldownStart();
     }
@@ -41,10 +37,6 @@ public class FireballSkillManager : MonoBehaviour
     public void FireballEnd(){
         playerController.FireballEnd();
         fireballEffect.FireballEnd();
-    }
-
-    private bool CheckingEnergy(){
-        return true;
     }
 
     /**
