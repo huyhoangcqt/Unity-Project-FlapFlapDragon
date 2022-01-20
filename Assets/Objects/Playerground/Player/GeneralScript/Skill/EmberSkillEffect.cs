@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EmberSkillEffect : MonoBehaviour
 {
-    
+    private PlayerController playerController;
     [SerializeField] private GameObject bulletSrc, bullet;
     [SerializeField] private float bulletSpeed;
     private Quaternion _rotation;
@@ -17,6 +17,7 @@ public class EmberSkillEffect : MonoBehaviour
     private Quaternion temp_rotation;
     void Start(){
         anim = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
         head = GameObject.Find("BabyDragon/Head");
         if (head == null){
             Debug.LogError("Dragon don't exist head");
@@ -36,7 +37,7 @@ public class EmberSkillEffect : MonoBehaviour
 
     public void OnEmberStart(){
         anim.SetBool("isAttack", true);
-        temp_rotation = head.transform.rotation;
+        temp_rotation = head.transform.rotation;        //i don't know why it doesn't work
         head.transform.rotation = rotation;
     }
 

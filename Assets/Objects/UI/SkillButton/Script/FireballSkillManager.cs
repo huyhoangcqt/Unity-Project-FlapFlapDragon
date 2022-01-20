@@ -39,30 +39,7 @@ public class FireballSkillManager : MonoBehaviour
         fireballEffect.FireballEnd();
     }
 
-    /**
-     * * Cooldown
-    */
-    private  IEnumerator StartCooldown(float time){
-        button.UpdateCooldownText(time, "N0");
-        while (time > 1f){
-            yield return new WaitForSeconds(1f);
-            time -= 1f;
-            button.UpdateCooldownText(time, "N0");
-        }
-        while (time > 0f){
-            yield return new WaitForSeconds(0.1f);
-            time -= 0.1f;
-            button.UpdateCooldownText(time, "N1");
-        }
-        CooldownEnd();
-    }
-
     private void CooldownStart(){
-        button.CooldownEffectStart(cooldownTime);
-        StartCoroutine(StartCooldown(cooldownTime));
-    }
-
-    internal void CooldownEnd(){
-        button.CooldownEffectEnd();
+        button.CooldownStart(cooldownTime);
     }
 }

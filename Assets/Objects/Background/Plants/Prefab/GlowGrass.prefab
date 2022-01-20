@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8695369020252489731
 Transform:
   m_ObjectHideFlags: 0
@@ -370,10 +370,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7578784765088475178}
   - component: {fileID: 4595226202967930951}
-  - component: {fileID: 549302583779476969}
   - component: {fileID: 1196600564609504502}
   m_Layer: 0
-  m_Name: Glow Grass
+  m_Name: GlowGrass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,18 +418,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &549302583779476969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3384390593487035779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 775b8e53dd0cbe449b88bb2ae09d3348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1196600564609504502
 MonoBehaviour:
   m_ObjectHideFlags: 0

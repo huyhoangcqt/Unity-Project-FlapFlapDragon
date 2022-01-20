@@ -26,7 +26,7 @@ public class FireBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Ground"){
+        if (other.gameObject.tag == "Enemy" && other.gameObject.tag == "Obstacle"){
             Instantiate(explosionEff, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

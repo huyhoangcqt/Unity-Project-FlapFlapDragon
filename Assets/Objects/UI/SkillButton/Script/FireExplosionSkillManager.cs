@@ -33,7 +33,6 @@ public class FireExplosionSkillManager : MonoBehaviour
         playerController.status = PlayerStatus.Invincible;
         playerController.Disappear();
         playerController.PreExplosionMovement();
-        button.BannedOn(durationTime);
         SkillManager.instance.BannedAll(durationTime);
         LightController.instance.Darken();
     }
@@ -48,31 +47,16 @@ public class FireExplosionSkillManager : MonoBehaviour
         ExplosionSkillStart();
         StartCoroutine(WaitingPreExplosionSkill());
         StartCoroutine(ExplosionDuration());
-        //Cooldown
-        CooldownStart();
+        
+        ButtonCooldownStart();
+        ButtonBannedOnStart();
     }
 
-    private  IEnumerator StartCooldown(float time){
-        button.UpdateCooldownText(time, "N0");
-        while (time > 1f){
-            yield return new WaitForSeconds(1f);
-            time -= 1f;
-            button.UpdateCooldownText(time, "N0");
-        }
-        while (time > 0f){
-            yield return new WaitForSeconds(0.1f);
-            time -= 0.1f;
-            button.UpdateCooldownText(time, "N1");
-        }
-        CooldownEnd();
+    private void ButtonBannedOnStart(){
+        button.BannedOn(durationTime);
     }
 
-    private void CooldownStart(){
-        button.CooldownEffectStart(cooldownTime);
-        StartCoroutine(StartCooldown(cooldownTime));
-    }
-
-    internal void CooldownEnd(){
-        button.CooldownEffectEnd();
+    private void ButtonCooldownStart(){
+        button.CooldownStart(cooldownTime);
     }
 }

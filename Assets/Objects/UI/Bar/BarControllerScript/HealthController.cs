@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthController : MonoBehaviour
+public class HealthController : Singleton<HealthController>
 {
-    private int deathLimit = 3;
-    private int deathCount = 0;
+    // private int deathLimit = 3;
+    // private int deathCount = 0;
 
     private int maxHP = 100;
     private int crrHP = 0;

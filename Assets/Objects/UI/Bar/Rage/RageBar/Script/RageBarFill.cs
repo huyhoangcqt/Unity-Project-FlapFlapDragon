@@ -17,12 +17,6 @@ public class RageBarFill : MonoBehaviour
         image = GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void BackupColor(){
         backupColor = image.color;
     }

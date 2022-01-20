@@ -4,7 +4,7 @@ public class TestAnything : MonoBehaviour
 {
     private HealthController healthController;
     // Start is called before the first frame update
-    private int objectGUID = 0;
+    // private int objectGUID = 0;
     void Start()
     {
         healthController = GetComponent<HealthController>();

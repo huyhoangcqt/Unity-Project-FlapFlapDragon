@@ -35,10 +35,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]private float dashForce, dragForce;
     private EmberSkillManager emberSkillManager;
-
     private Rigidbody2D rgbd2D;
-
-    [SerializeField]private ManaController mpController;
+    private float tempGravityScale;
+    
     private void Start()
     {
         rgbd2D = GetComponent<Rigidbody2D>();
@@ -48,9 +47,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void InitializeParameters(){
-        onGround = false;
         status = PlayerStatus.Inactive;
-        anim.SetBool("isActive", false);
+        anim.SetBool("isActive", true);
         
         //Step 1
         // tutorialManager.SetIndex(0);
@@ -64,24 +62,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     private void Update()
     {
         InputDectection();
         OnHoldingLeftSide();
-        // if (CheckingFirstEnemyAppear()){
-        //     OnFirstEnemyAppear();
-        // }
     }
 
-    private bool CheckingFirstEnemyAppear(){
-        return true;
-    }
-
-    public void OnFirstEnemyAppear(){
-        // tutorialManager.SetIndex(1);
-    }
-
+    /**
+     * * Input Dection
+    */
     private void OnHoldingLeftSide(){
         if (isHoldingOnLeft){
             holdingDuration += Time.deltaTime;
@@ -92,6 +81,57 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void InputDectection(){
+        if (inputEnabled){
+            if (Input.touchCount > 0){
+                Touch[] myTouches = Input.touches;
+                foreach (Touch touch in myTouches){
+                    /* 
+                    * * If Touch on left side => Movement
+                    */
+                    if (touch.position.x < Screen.width *2/5){
+                        if (touch.phase == TouchPhase.Began){
+                            isHoldingOnLeft = true;
+                            status = PlayerStatus.Normal;
+                            anim.SetBool("isIdle", false); //onGround = false;
+
+                            // tutorialManager.SetIndex(-1);//Passed step 1;
+                            
+                            //Set Force;
+                            tempJumpForce = jumpForce;
+                            tempMoveForce = moveForce;
+                            rgbd2D.velocity = new Vector2(0, 0);
+                            Moving();
+                            tempJumpForce = additionalJumpForce;
+                            tempMoveForce = additionalMoveForce;
+                        }
+                        if (touch.phase == TouchPhase.Ended){
+                            isHoldingOnLeft = false;
+                            holdingDuration = 0f;
+                        } 
+                    }
+                    //If Touch at right side => shooting
+                    else {
+                        if (attackInputEnabled){
+                            if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId)){
+                                emberSkillManager.Process(touch);
+                            }
+                        }
+                    }
+                };
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.transform.tag.Equals("Ground")){
+            anim.SetBool("isIdle", true);
+        }
+    }
+
+    /**
+     * * Enable, Disable
+    */
     public void EnableAttack(){
         attackInputEnabled = true;
     }
@@ -105,62 +145,6 @@ public class PlayerController : MonoBehaviour
     }
     public void DisableInputGetting(){
         inputEnabled = false;
-    }
-
-    void InputDectection(){
-        if (inputEnabled){
-            if (Input.touchCount > 0){
-                Touch[] myTouches = Input.touches;
-                foreach (Touch touch in myTouches){
-                    /* 
-                    * * If Touch on left side*/
-                    if (touch.position.x < Screen.width *2/5){
-                        if (touch.phase == TouchPhase.Began){
-                            //process here;
-                            isHoldingOnLeft = true;
-                            status = PlayerStatus.Normal;
-                            anim.SetBool("isActive", true);
-
-                            // tutorialManager.SetIndex(-1);//Passed step 1;
-                            
-                            //Set Force;
-                            tempJumpForce = jumpForce;
-                            tempMoveForce = moveForce;
-                            rgbd2D.velocity = new Vector2(0, 0);
-                            Moving();
-                            tempJumpForce = additionalJumpForce;
-                            tempMoveForce = additionalMoveForce;
-
-                            //OnGround;
-                            onGround = false;
-                            anim.SetBool("isIdle", false);
-                        }
-                        if (touch.phase == TouchPhase.Ended){
-                            isHoldingOnLeft = false;
-                            holdingDuration = 0f;
-                        }   
-                    }
-                    //If Touch at right side => shooting
-                    else {
-                        if (attackInputEnabled){
-                            if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId)){
-                                emberSkillManager.Process(touch);
-                            }
-                        }
-                    }
-                };
-            }
-            if (Input.GetMouseButtonDown(0)){
-                if (mpController.CheckingMana(10)){
-                    mpController.ConsumeMana(10);
-                };
-            }
-            else {
-                if (Input.GetMouseButtonDown(1)){
-                    mpController.RecoveryMana(10);
-                }
-            }
-        }
     }
 
     void Moving(){
@@ -178,13 +162,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Ground"){
-            onGround = true;
-            anim.SetBool("isIdle", onGround);
-        }
-    }
-
     /**
      * * Fireball controller functions
     */
@@ -195,34 +172,6 @@ public class PlayerController : MonoBehaviour
    public void FireballEnd(){
        EnableAttack();
    }
-
-    private float tempGravityScale;
-    /*
-    * * Dash movement control function
-    */
-    public void PreDashMovement(){
-        DisableAttack();
-        DisableInputGetting();
-        rgbd2D.velocity = Vector3.zero;
-        tempGravityScale = rgbd2D.gravityScale;
-        rgbd2D.gravityScale = 0f;
-
-        rgbd2D.AddForce(new Vector2(50, 0f));
-    }
-
-    public void DashMovementOn(){
-        rgbd2D.AddForce(new Vector2(dashForce, 0f));
-    }
-
-    public void DashMovementOff(){
-        EnableAttack();
-        EnabledInputGetting();
-        rgbd2D.gravityScale = tempGravityScale;
-    }
-
-     public void DashMovementLastMove(){
-        rgbd2D.AddForce(new Vector2 (-dragForce, 0f));
-    }
 
     /*
     * * FireExplosion movement control function

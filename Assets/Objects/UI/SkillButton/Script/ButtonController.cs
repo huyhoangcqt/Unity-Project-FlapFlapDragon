@@ -47,16 +47,6 @@ public class ButtonController : MonoBehaviour
         isBanned = false; isCooldown = false; isActive = true; isEnoughEnergy = true;
     }
 
-       private bool CheckingEnergy(){
-        if (!mpController.CheckingMana(condition.mana)){
-            return false;
-        }
-        if (!rageController.CheckingRage(condition.rage)){
-            return false;
-        }
-        return true;
-    }
-
     GameObject FindGameObject(string objectName){
         Transform result = transform.Find(objectName);
         if (result == null){
@@ -66,12 +56,69 @@ public class ButtonController : MonoBehaviour
         else return result.gameObject;
     }
 
+    public void Update(){
+        /**
+         * * Banned process
+        */
+        if (bannedTime > 0){
+            bannedTime -= Time.deltaTime;
+            if (bannedTime <= 0){
+                BannedOff();
+            }
+        };
+
+        /**
+         * * Cooldown process
+        */
+        if (cooldownTime > 0){
+            if (cooldownTime >= 1){
+                cdText.text = cooldownTime.ToString("N0");
+            }
+            else {
+                cdText.text = cooldownTime.ToString("N1");
+            }
+            cooldownTime -= Time.deltaTime;
+            if (cooldownTime <= 0){
+                CooldownEnd();
+            }
+        }
+
+
+        /**
+         * * CheckingCondition
+        */
+        isEnoughEnergy = CheckingCondition();
+        if (!isActive){
+            if (!isCooldown && !isBanned && isEnoughEnergy){
+                ActiveButton();
+            }
+        }
+        if (isActive && !isEnoughEnergy){
+            print("Disable Button");
+            DisableButton();
+        }
+    }
+
+    private bool CheckingCondition(){
+        if (!mpController.CheckingMana(condition.mana)){
+            return false;
+        }
+        if (!rageController.CheckingRage(condition.rage)){
+            return false;
+        }
+        return true;
+    }
+
     /**
      * *Require to active: @ActiveButton() function
      * 1. No cooldown
      * 2. No banned
-     * Enough energy/ rage point
+     * 3. Satify condition (enough mana, rage);
     */
+    IEnumerator HideFlashEffect(float time){
+        yield return new WaitForSeconds(time);
+        flashEffect.SetActive(false);
+    }
     public virtual void ActiveButton(){
        //print("ActiveButton");
         flashEffect.SetActive(true);
@@ -83,10 +130,6 @@ public class ButtonController : MonoBehaviour
         Enable();
     }
 
-    IEnumerator HideFlashEffect(float time){
-        yield return new WaitForSeconds(time);
-        flashEffect.SetActive(false);
-    }
 
     public void DisableButton(){
         isActive = false;
@@ -106,54 +149,21 @@ public class ButtonController : MonoBehaviour
         }
     }
 
-    private int temp = 0;
-    public void Update(){
-        isEnoughEnergy = CheckingEnergy();
-        if (bannedTime > 0){
-            bannedTime -= Time.deltaTime;
-            if (bannedTime <= 0){
-                BannedOff();
-            }
-        };
-        if (cooldownTime > 0){
-            cooldownTime -= Time.deltaTime;
-            if (cooldownTime <= 0){
-                CooldownEffectEnd();
-            }
-        };
-        if (!isActive){
-            if (temp < 3){
-                temp++;
-            }
-            if (!isCooldown && !isBanned && isEnoughEnergy){
-                ActiveButton();
-            }
-        }
-        if (isActive && !isEnoughEnergy){
-            print("Disable Button");
-            DisableButton();
-        }
-    }
-
     private void BannedOff(){
         banned.SetActive(false);
         isBanned = false;
     }
 
-    internal void CooldownEffectStart(float time){
+    internal void CooldownStart(float time){
         cooldownTime = time;
         cooldownText.SetActive(true);
         isCooldown = true;
         DisableButton();
     }
 
-    internal void CooldownEffectEnd(){
+    internal void CooldownEnd(){
         cooldownText.SetActive(false);
         isCooldown = false;
-    }
-
-    internal void UpdateCooldownText(float time, string format){
-        cdText.text = time.ToString(format);
     }
 
     public void Disable(){

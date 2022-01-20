@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class RageController : MonoBehaviour
+public class RageController : Singleton<RageController>
 {
 private float maxRage = 100;
     private float crrRage = 0;

@@ -1,24 +1,20 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
     public GameObject blood;
-    [SerializeField] private HealthController healthController;
-    [SerializeField] private ManaController manaController;
-    private PlayerController playerController;
+    private PlayerController pController;
     private int objectGUID = 0;
     private PlayerStatus status;
     void Start()
     {
-        healthController = GetComponent<HealthController>();
-        playerController = GetComponent<PlayerController>();
-        status = playerController.status;
+        pController = GetComponent<PlayerController>();
+        status = pController.status;
     }
 
     void Update(){
-        status = playerController.status;
+        status = pController.status;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -39,7 +35,7 @@ public class PlayerCollision : MonoBehaviour
                 if (stat != null){
                     dmg = stat.dmg;
                 }
-                healthController.TakeDamage(dmg);
+                HealthController.instance.TakeDamage(dmg);
                 //Add blood effect
                 SpawnBloodEffect();
             }
