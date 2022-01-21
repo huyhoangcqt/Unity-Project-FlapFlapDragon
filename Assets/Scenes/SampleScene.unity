@@ -7928,18 +7928,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bcd0abff31ffef499c07340a504f722, type: 3}
---- !u!114 &1292793390340560507 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5301281051903283047, guid: d540255b2934ec94e8c7a6c4ad09081b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6368375448397453596}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197170876471630308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949ac8a1a59a1eb4e92ca33fea2a709d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1303857767480065390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13626,6 +13614,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 894227797185546110, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547528404351598837, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: flashEffect
+      value: 
+      objectReference: {fileID: 6218179080860203331, guid: 80dbf6cd97c33554785ee137a00dcb79,
+        type: 3}
     - target: {fileID: 6547528404351598840, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
       propertyPath: m_Name
@@ -13639,6 +13638,21 @@ PrefabInstance:
     - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
@@ -13690,6 +13704,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547528404351598845, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547528405244939741, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d540255b2934ec94e8c7a6c4ad09081b, type: 3}
@@ -14176,7 +14200,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillEffect: {fileID: 197170876471630313}
   button: {fileID: 7843624661308079115}
-  playerController: {fileID: 1292793390340560507}
   durationTime: 10
   cooldownTime: 12
 --- !u!114 &7843624661308079115

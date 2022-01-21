@@ -6,7 +6,7 @@ public class FireBullet : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D body;
-    public GameObject explosionEff;
+    [SerializeField] public GameObject explosionEff;
     private Collider2D col;
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class FireBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Enemy" && other.gameObject.tag == "Obstacle"){
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Obstacle"){
             Instantiate(explosionEff, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

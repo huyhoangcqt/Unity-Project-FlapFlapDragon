@@ -11,12 +11,12 @@ public class RagePoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RageController.instance.RageUp(rage);
         body = GetComponent<Rigidbody2D>();
         body.velocity = Vector3.up * speed;
     }
 
     public void EndingLifeCycle(){
-        RageController.instance.RageUp(rage);
         Destroy(gameObject);
     }
 }

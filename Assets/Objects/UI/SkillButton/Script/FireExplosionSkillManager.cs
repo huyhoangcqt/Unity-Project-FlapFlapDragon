@@ -6,7 +6,6 @@ public class FireExplosionSkillManager : MonoBehaviour
 {
     [SerializeField]private ExplosionSkillEffect skillEffect;
     [SerializeField]private ButtonController button;
-    [SerializeField]private PlayerController playerController;
     [SerializeField]private float durationTime, cooldownTime;
     private SkillManager skillManager;
 
@@ -14,7 +13,9 @@ public class FireExplosionSkillManager : MonoBehaviour
         skillManager = gameObject.GetComponent<SkillManager>();
     }
 
-    private IEnumerator ExplosionDuration(){
+    private IEnumerator ExecutingExplosionSkill(float prepareTime){
+        yield return new WaitForSeconds(prepareTime);
+        skillEffect.ExplosionEffectStart();
         yield return new WaitForSeconds(4f);
         skillEffect.CloseMouth();
         yield return new WaitForSeconds(durationTime - 4f);
@@ -23,38 +24,30 @@ public class FireExplosionSkillManager : MonoBehaviour
 
     private void ExplosionSkillEnd(){
         skillEffect.ExplosionEffectEnd();
-        playerController.ExplosionMovementOff();
-        playerController.status = PlayerStatus.Normal;
         LightController.instance.Recover();
     }
 
     private void ExplosionSkillStart(){
-        button.isActive = false;
-        playerController.status = PlayerStatus.Invincible;
-        playerController.Disappear();
-        playerController.PreExplosionMovement();
-        SkillManager.instance.BannedAll(durationTime);
-        LightController.instance.Darken();
+        float prepareTime = 1f;
+        PrepareExplosionSkill(prepareTime);
+        StartCoroutine(ExecutingExplosionSkill(prepareTime));
     }
 
-    private IEnumerator WaitingPreExplosionSkill(){
-        yield return new WaitForSeconds(1f);
-        playerController.Appear();
-        skillEffect.ExplosionEffectStart();
+    private void PrepareExplosionSkill(float time){
+        LightController.instance.Darken();
+        skillEffect.PrepareExplosionSkill(time);
         button.ConsumeEnergy();
     }
 
     public void OnButtonClick(){
-        ExplosionSkillStart();
-        StartCoroutine(WaitingPreExplosionSkill());
-        StartCoroutine(ExplosionDuration());
-        
+        ExplosionSkillStart();        
         ButtonCooldownStart();
         ButtonBannedOnStart();
     }
 
     private void ButtonBannedOnStart(){
         button.BannedOn(durationTime);
+        SkillManager.instance.BannedAll(durationTime);
     }
 
     private void ButtonCooldownStart(){
