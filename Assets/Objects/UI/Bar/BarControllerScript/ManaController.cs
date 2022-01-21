@@ -25,13 +25,13 @@ public class ManaController : MonoBehaviour
     void Update(){
         if (time >= 1){
             time -= 1;
-            RecoveryMana(stats.manaRecovery, 0);
+            RecoveryMana(stats.mpRecovery, 0);
         }
         time += Time.deltaTime;
     }
 
     /**
-     * * 0: Default mana recovery per second
+     * * 0: Default mp recovery per second
      * * 1: Recovery when collecting items;
     */
     public void RecoveryMana(int mp, int type){

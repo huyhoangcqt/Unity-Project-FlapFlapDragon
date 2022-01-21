@@ -8,7 +8,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private int _mp;
     [SerializeField] private int _dmg;
     [SerializeField] private int _spe;
-    [SerializeField] private int _mp_recovery;
+    [SerializeField] private int _mpRecovery;
 
     protected virtual void Initialize(){
 
@@ -42,10 +42,10 @@ public class Stats : MonoBehaviour
         }
         set { _spe = value;}
     }
-    public int manaRecovery{
+    public int mpRecovery{
         get {
-            return _mp_recovery;
+            return _mpRecovery;
         }
-        set { _mp_recovery = value;}
+        set { _mpRecovery = value;}
     }
 }

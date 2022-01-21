@@ -22,9 +22,9 @@ public class PlayerStats : Stats
         if (spe == 0){
             spe = 10;
         }
-        if (manaRecovery < 0){ manaRecovery = 0;}
-        if (manaRecovery == 0){
-            manaRecovery = 1;
+        if (mpRecovery < 0){ mpRecovery = 0;}
+        if (mpRecovery == 0){
+            mpRecovery = 1;
         }
     }
 }
