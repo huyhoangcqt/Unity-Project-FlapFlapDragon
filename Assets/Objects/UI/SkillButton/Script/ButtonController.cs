@@ -130,7 +130,6 @@ public class ButtonController : MonoBehaviour
         Enable();
     }
 
-
     public void DisableButton(){
         isActive = false;
         inactive.SetActive(true);
@@ -166,12 +165,17 @@ public class ButtonController : MonoBehaviour
         isCooldown = false;
     }
 
-    public void Disable(){
+    private void Disable(){
         GetComponent<Button>().enabled = false;
        ////print("Button disable");
     }
-    public void Enable(){
+    private void Enable(){
         GetComponent<Button>().enabled = true;
        ////print("Button enable");
+    }
+
+    public void ConsumeEnergy(){
+        mpController.ConsumeMana(condition.mana);
+        rageController.RageDown(condition.rage);
     }
 }

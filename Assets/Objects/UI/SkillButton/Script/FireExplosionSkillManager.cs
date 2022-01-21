@@ -41,6 +41,7 @@ public class FireExplosionSkillManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         playerController.Appear();
         skillEffect.ExplosionEffectStart();
+        button.ConsumeEnergy();
     }
 
     public void OnButtonClick(){

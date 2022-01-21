@@ -6,14 +6,17 @@ public class FireballSkillEffect : MonoBehaviour
 {
     
     [SerializeField] private GameObject fireball, bulletSrc;
+    private PlayerController playerController;
     private Animator anim;
 
     void Start(){
         anim = GetComponent<Animator>();    
+        playerController = GetComponent<PlayerController>();
     }
 
     public void FireballStart(){
         anim.SetBool("isSkill1Active", true);
+        playerController.DisableAttack();
         ShootFireball();
     }
 
@@ -22,6 +25,7 @@ public class FireballSkillEffect : MonoBehaviour
     }
 
     public void FireballEnd(){
+        playerController.EnableAttack();
         anim.SetBool("isSkill1Active", false);
     }
 }

@@ -6483,7 +6483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3710badf33ae75e419fbc452e536a47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1292793390340560507}
   fireballEffect: {fileID: 197170876471630309}
   button: {fileID: 1830419421}
   cooldownTime: 5
@@ -13645,7 +13644,7 @@ PrefabInstance:
     - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.04
       objectReference: {fileID: 0}
     - target: {fileID: 6547528404351598844, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}

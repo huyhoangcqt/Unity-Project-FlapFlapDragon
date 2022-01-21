@@ -34,6 +34,7 @@ public class DashSkillManager : MonoBehaviour
         isExecuting = true;
         tempDurationTime = durationTime;
         skillEffect.DashEffectStart();
+        button.ConsumeEnergy();
     }
 
     private void DashSkillEnd(){

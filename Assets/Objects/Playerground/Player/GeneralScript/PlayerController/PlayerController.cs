@@ -162,17 +162,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /**
-     * * Fireball controller functions
-    */
-   public void FireballStart(){
-       DisableAttack();
-   }
-
-   public void FireballEnd(){
-       EnableAttack();
-   }
-
     /*
     * * FireExplosion movement control function
     */
