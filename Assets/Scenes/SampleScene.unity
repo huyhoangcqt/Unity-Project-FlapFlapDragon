@@ -7663,8 +7663,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillEffect: {fileID: 197170876471630312}
   button: {fileID: 391336632631471099}
-  durationTime: 3
-  cooldownTime: 10
+  durationTime: 1
+  cooldownTime: 3
   skillManager: {fileID: 1213690186}
 --- !u!114 &391336632631471099
 MonoBehaviour:
@@ -7680,7 +7680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition:
     rage: 0
-    mana: 20
+    mana: 10
   mpController: {fileID: 1697908715}
   rageController: {fileID: 1697908714}
 --- !u!114 &391336632824005930
@@ -13619,6 +13619,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6547528404351598836, guid: d540255b2934ec94e8c7a6c4ad09081b,
+        type: 3}
+      propertyPath: dashForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6547528404351598837, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
       propertyPath: flashEffect
@@ -14201,7 +14206,7 @@ MonoBehaviour:
   skillEffect: {fileID: 197170876471630313}
   button: {fileID: 7843624661308079115}
   durationTime: 10
-  cooldownTime: 12
+  cooldownTime: 30
 --- !u!114 &7843624661308079115
 MonoBehaviour:
   m_ObjectHideFlags: 0

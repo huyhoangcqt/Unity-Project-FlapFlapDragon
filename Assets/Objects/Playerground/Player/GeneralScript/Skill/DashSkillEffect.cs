@@ -20,14 +20,14 @@ public class DashSkillEffect : MonoBehaviour
 
     public void DashEffectStart(){
         anim.SetBool("isSkill2Active", true);
-        MovementOn();
 
+        MovementStart();
         trail1_instance = Instantiate(trail1, transform.position, Quaternion.identity);
         trail2_instance = Instantiate(trail2, transform.position, Quaternion.identity);
         trail2_instance.transform.parent = pController.transform;
     }
 
-    private void MovementOn(){
+    private void MovementStart(){
         tempGravityScale = rgbd2D.gravityScale;
         rgbd2D.gravityScale = 0f;
         rgbd2D.velocity = Vector2.zero;
