@@ -364,6 +364,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RageFire
       objectReference: {fileID: 0}
+    - target: {fileID: 1896830083379377212, guid: 88af992111bea1940ad6571a18a0695f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8560170710306484371, guid: 88af992111bea1940ad6571a18a0695f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1716,6 +1721,7 @@ MonoBehaviour:
   _mp: 0
   _dmg: 0
   _spe: 0
+  _mp_recovery: 0
 --- !u!4 &456115865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3242703299025876684, guid: 7e6102a53b90d344e8e5797f812a7548,
@@ -2061,12 +2067,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540331899}
   m_CullTransparentMesh: 0
---- !u!1 &596035859 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3068953900574266217, guid: b8958d17492a2ce4d84e6cb12f6ea657,
-    type: 3}
-  m_PrefabInstance: {fileID: 7111784591936763988}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &604850086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2492,7 @@ MonoBehaviour:
   _mp: 0
   _dmg: 0
   _spe: 0
+  _mp_recovery: 0
 --- !u!4 &620208327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8045850633864165462, guid: a3503a98ee221e24aba3485438f0fbef,
@@ -2843,6 +2844,7 @@ MonoBehaviour:
   _mp: 0
   _dmg: 0
   _spe: 0
+  _mp_recovery: 0
 --- !u!1001 &744960102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5904,7 +5906,6 @@ MonoBehaviour:
   rageBarFill: {fileID: 2119765177}
   rageFires:
   - {fileID: 342368199}
-  - {fileID: 596035859}
 --- !u!114 &1697908715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13718,7 +13719,7 @@ PrefabInstance:
     - target: {fileID: 6547528405244939741, guid: d540255b2934ec94e8c7a6c4ad09081b,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d540255b2934ec94e8c7a6c4ad09081b, type: 3}

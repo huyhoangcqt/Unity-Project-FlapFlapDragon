@@ -21,14 +21,29 @@ public class ManaController : MonoBehaviour
         manaBarAnim = manaBar.gameObject.GetComponent<Animator>();
     }
 
-    public void RecoveryMana(int mp){
+    private float time = 0f;
+    void Update(){
+        if (time >= 1){
+            time -= 1;
+            RecoveryMana(stats.manaRecovery, 0);
+        }
+        time += Time.deltaTime;
+    }
+
+    /**
+     * * 0: Default mana recovery per second
+     * * 1: Recovery when collecting items;
+    */
+    public void RecoveryMana(int mp, int type){
         crrMP += mp;
         if (crrMP > maxMP){
             crrMP = maxMP;
         }
-        manaBar.SetCurrentMana(crrMP);
-        manaBarAnim.SetBool("isRecover", true);
-        StartCoroutine(RecoveryAnimationEnd());
+        if (type == 1){
+            manaBarAnim.SetBool("isRecover", true);
+            StartCoroutine(RecoveryAnimationEnd());
+        }
+            manaBar.SetCurrentMana(crrMP);
     }
 
     private IEnumerator RecoveryAnimationEnd(){
