@@ -209,9 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1823647adf562ca41a9c8b285b9f81e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rage: 100
+  rage: 25
   speed: 5
-  rageController: {fileID: 0}
 --- !u!50 &-7480716242028183331
 Rigidbody2D:
   serializedVersion: 4

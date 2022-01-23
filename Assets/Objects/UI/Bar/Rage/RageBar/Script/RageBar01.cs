@@ -7,8 +7,10 @@ public class RageBar01 : MonoBehaviour
 {
     private float maxRage, crrRage;
     private Image fillImage;
+    public Gradient gradient;
+    public GameObject[] rageFires;
 
-    void Start(){
+    void Awake(){
         fillImage = transform.Find("fill").GetComponent<Image>();
     }
 
@@ -27,11 +29,36 @@ public class RageBar01 : MonoBehaviour
         if (fill > fraction){ // TakeDamage
             fillImage.fillAmount = fraction;
         }
+        fillImage.color = gradient.Evaluate(fillImage.fillAmount);
+        if (fill == 1){
+            RageFullEffect();
+        }
+        else {
+            DisableRageFullEffect();
+        }
+    }
+
+    public void RageFullEffect(){
+        if (rageFires.Length > 0){
+            for (int i = 0; i < rageFires.Length; i++){
+                rageFires[i].SetActive(true);
+            }
+        }
+    }
+    public void DisableRageFullEffect(){
+        if (rageFires.Length > 0){
+            for (int i = 0; i < rageFires.Length; i++){
+                rageFires[i].SetActive(false);
+            }
+        }
     }
 
     public void SetMaxRage(float amount){
         maxRage = amount;
+    }
+    public void SetCurrentRage(float amount){
         crrRage = amount;
+        fillImage.color = gradient.Evaluate(crrRage / maxRage);
     }
 
     public void ConsumeRage(float amount){

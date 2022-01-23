@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RageController01 : MonoBehaviour
+public class RageController01 : Singleton<RageController01>
 {
     [SerializeField] private RageBar01 rageBar;
-    [SerializeField] int rage;
+    [SerializeField] int crrRage, maxRage;
 
     void Start() {
-        rageBar.SetMaxRage((float)rage);
+        rageBar.SetMaxRage((float)maxRage);
+        rageBar.SetCurrentRage((float)crrRage);
     }
 
     private void Update() {
@@ -18,5 +19,9 @@ public class RageController01 : MonoBehaviour
         if (Input.GetMouseButtonDown(1)){
             rageBar.RestoreRage(Random.Range(2,20));
         }
+    }
+
+    internal void RageUp(float rage){
+        rageBar.RestoreRage(rage);
     }
 }
