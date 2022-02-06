@@ -12,13 +12,18 @@ public class ManaController01 : MonoBehaviour
         manaBar.SetMaxMana((float)mp);
         manaBar.mpRecovery = (float)mpRecovery;
     }
-
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)){
-            manaBar.ConsumeMana(Random.Range(2, 20));
-        };
-        if (Input.GetMouseButtonDown(1)){
-            manaBar.RestoreMana(Random.Range(2,20));
+    public bool CheckingMana(int value){
+        if (mp >= value){
+            return true;
         }
+        return false;
+    }
+
+    internal void RestoreMana(float mana){
+        manaBar.RestoreMana(mana);
+    }
+
+    internal void ConsumeMana(float mana){
+        manaBar.ConsumeMana(mana);
     }
 }

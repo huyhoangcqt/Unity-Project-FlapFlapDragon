@@ -35,7 +35,7 @@ public class PlayerCollision : MonoBehaviour
                 if (stat != null){
                     dmg = stat.dmg;
                 }
-                HealthController.instance.TakeDamage(dmg);
+                HealthController01.instance.TakeDamage(dmg);
                 //Add blood effect
                 SpawnBloodEffect();
             }

@@ -12,16 +12,27 @@ public class RageController01 : Singleton<RageController01>
         rageBar.SetCurrentRage((float)crrRage);
     }
 
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)){
-            rageBar.ConsumeRage(Random.Range(2, 20));
-        };
-        if (Input.GetMouseButtonDown(1)){
-            rageBar.RestoreRage(Random.Range(2,20));
-        }
+    // private void Update() {
+    //     if (Input.GetMouseButtonDown(0)){
+    //         rageBar.ConsumeRage(Random.Range(2, 20));
+    //     };
+    //     if (Input.GetMouseButtonDown(1)){
+    //         rageBar.RestoreRage(Random.Range(2,20));
+    //     }
+    // }
+
+    internal void RestoreRage(float rage){
+        rageBar.RestoreRage(rage);
     }
 
-    internal void RageUp(float rage){
-        rageBar.RestoreRage(rage);
+    internal void ConsumeRage(float rage){
+        rageBar.ConsumeRage(rage);
+    }
+
+    public bool CheckingRage(int rage){
+        if (crrRage >= rage){
+            return true;
+        }
+        return false;
     }
 }

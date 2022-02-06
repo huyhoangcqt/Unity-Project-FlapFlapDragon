@@ -11,7 +11,7 @@ public class RagePoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RageController01.instance.RageUp(rage);
+        RageController01.instance.RestoreRage(rage);
         body = GetComponent<Rigidbody2D>();
         body.velocity = Vector3.up * speed;
     }

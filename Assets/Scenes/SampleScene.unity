@@ -2994,6 +2994,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5764884318239259496, guid: bda02da3e90761f4a9a5a2957ffa6665,
         type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764884318239259496, guid: bda02da3e90761f4a9a5a2957ffa6665,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764884318239259496, guid: bda02da3e90761f4a9a5a2957ffa6665,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764884318239259496, guid: bda02da3e90761f4a9a5a2957ffa6665,
+        type: 3}
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
@@ -5917,8 +5932,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: 134, y: 14.5}
+  m_SizeDelta: {x: 486.57343, y: 130.52563}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1697908714
 MonoBehaviour:
@@ -5993,7 +6008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaBar: {fileID: 664532541}
   mp: 100
-  mpRecovery: 10
+  mpRecovery: 1
 --- !u!114 &1697908719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6016,7 +6031,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697908712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6668,8 +6683,8 @@ MonoBehaviour:
   condition:
     rage: 0
     mana: 20
-  mpController: {fileID: 1697908715}
-  rageController: {fileID: 1697908714}
+  mpController: {fileID: 1697908718}
+  rageController: {fileID: 1697908719}
 --- !u!222 &1830419422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7652,8 +7667,8 @@ MonoBehaviour:
   condition:
     rage: 0
     mana: 10
-  mpController: {fileID: 1697908715}
-  rageController: {fileID: 1697908714}
+  mpController: {fileID: 1697908718}
+  rageController: {fileID: 1697908719}
 --- !u!114 &391336632824005930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14992,8 +15007,8 @@ MonoBehaviour:
   condition:
     rage: 100
     mana: 50
-  mpController: {fileID: 1697908715}
-  rageController: {fileID: 1697908714}
+  mpController: {fileID: 1697908718}
+  rageController: {fileID: 1697908719}
 --- !u!222 &7843624661308079130
 CanvasRenderer:
   m_ObjectHideFlags: 0

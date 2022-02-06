@@ -34,8 +34,8 @@ public class ButtonController : MonoBehaviour
     protected GameObject inactive, cooldownText, banned;
     private Text cdText;
     [SerializeField] private Condition condition;
-    [SerializeField] private ManaController mpController;
-    [SerializeField] private RageController rageController;
+    [SerializeField] private ManaController01 mpController;
+    [SerializeField] private RageController01 rageController;
 
     void Start(){
         inactive = FindGameObject("inactive");
@@ -176,6 +176,6 @@ public class ButtonController : MonoBehaviour
 
     public void ConsumeEnergy(){
         mpController.ConsumeMana(condition.mana);
-        rageController.RageDown(condition.rage);
+        rageController.ConsumeRage(condition.rage);
     }
 }

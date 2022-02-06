@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthController01 : MonoBehaviour
+public class HealthController01 : Singleton<HealthController01>
 {
     [SerializeField] private HealthBar01 healthBar;
     [SerializeField] int hp;
@@ -11,12 +11,16 @@ public class HealthController01 : MonoBehaviour
         healthBar.SetMaxHealth((float)hp);
     }
 
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)){
-            healthBar.TakeDamage(Random.Range(2, 20));
-        };
-        if (Input.GetMouseButtonDown(1)){
-            healthBar.RestoreHealth(Random.Range(2,20));
-        }
+    // private void Update() {
+    //     if (Input.GetMouseButtonDown(0)){
+    //         healthBar.TakeDamage(Random.Range(2, 20));
+    //     };
+    //     if (Input.GetMouseButtonDown(1)){
+    //         healthBar.RestoreHealth(Random.Range(2,20));
+    //     }
+    // }
+
+    public void TakeDamage(float dmg){
+        healthBar.TakeDamage(dmg);
     }
 }
