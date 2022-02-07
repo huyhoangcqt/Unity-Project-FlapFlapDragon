@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealthController : MonoBehaviour
@@ -10,7 +9,8 @@ public class EnemyHealthController : MonoBehaviour
     private Canvas hbCanvas;
     private Stats stats;
     public GameObject destroyEff, ragePoint;
-    // Start is called before the first frame update
+    [SerializeField] private bool isShowCase;
+    
     void Start()
     {
         healthBar = transform.GetChild(0).GetChild(0).GetComponent<HealthBar>();
@@ -30,7 +30,9 @@ public class EnemyHealthController : MonoBehaviour
     {
         if (crrHP <= 0){
             Instantiate(destroyEff, transform.position, Quaternion.identity);
-            Instantiate(ragePoint, transform.position, Quaternion.identity);
+            if (!isShowCase){
+                Instantiate(ragePoint, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }
@@ -44,7 +46,7 @@ public class EnemyHealthController : MonoBehaviour
     }
 
     public void TakeDamage(float dmg){
-        print("Take Damage " + dmg);
+        //print("Take Damage " + dmg);
         hbCanvas.enabled = true;
         crrHP -= dmg;
         if (crrHP < 0){

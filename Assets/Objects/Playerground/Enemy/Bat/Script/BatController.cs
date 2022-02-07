@@ -20,6 +20,7 @@ public class BatController : MonoBehaviour
         body.velocity = Vector2.left * speed;
     }
     public void OnBecameInvisible(){
+        Destroy(this.gameObject);
         Destroy(this);
     }
 }

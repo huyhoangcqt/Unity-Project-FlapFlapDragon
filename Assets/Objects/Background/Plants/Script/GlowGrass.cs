@@ -5,10 +5,15 @@ using UnityEngine;
 public class GlowGrass : MonoBehaviour
 {
     private Animator anim;
-    // Start is called before the first frame update
+
+    void Awake(){
+        anim = GetComponent<Animator>();
+        anim.SetBool("isWaiting", true);
+    }
+    
     void Start()
     {
-        anim = GetComponent<Animator>();
+        Pre();
     }
 
     public void Darken(){
@@ -17,5 +22,16 @@ public class GlowGrass : MonoBehaviour
 
     public void Recover(){
         anim.SetBool("isDarken", false);
+        Pre();
+    }
+
+    [SerializeField] private float time;
+    public void Pre(){
+        StartCoroutine(WaitingIE(time));
+    }
+
+    IEnumerator WaitingIE(float time){
+        yield return new WaitForSeconds(Random.Range(0, time));
+        anim.SetBool("isWaiting", false);
     }
 }

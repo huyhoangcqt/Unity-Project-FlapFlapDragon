@@ -541,7 +541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7233107889099830157
 Transform:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2c3d6799a7c3c4398862009ec5db48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
 --- !u!58 &931551561713211470
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -660,6 +660,7 @@ MonoBehaviour:
     type: 3}
   ragePoint: {fileID: 7609979618407585588, guid: d793c82a4e5c2fe47b55b781b45bf7a4,
     type: 3}
+  isShowCase: 0
 --- !u!114 &1688759904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +689,7 @@ MonoBehaviour:
   _mp: 0
   _dmg: 10
   _spe: 10
+  _mpRecovery: 0
 --- !u!1 &8250332091450321799
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 2065729722100073519, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3014851027275532291, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
@@ -905,12 +907,12 @@ PrefabInstance:
     - target: {fileID: 7847102495771173215, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7847102495771173215, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8319312011011424535, guid: 3338b11301b6581448946a59e8a67db1,
         type: 3}

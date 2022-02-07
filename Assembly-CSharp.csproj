@@ -71,10 +71,13 @@
      <Compile Include="Assets\Objects\Playerground\Enemy\Bat\Script\BatVisible.cs" />
      <Compile Include="Assets\Objects\Playerground\Enemy\EnemyCollision.cs" />
      <Compile Include="Assets\Objects\Playerground\Enemy\EnemyHealthController.cs" />
+     <Compile Include="Assets\Objects\Playerground\Enemy\EnemySpawner.cs" />
      <Compile Include="Assets\Objects\Playerground\Enemy\HealthBarHidden.cs" />
      <Compile Include="Assets\Objects\Playerground\Enemy\Spider\Script\SpiderController.cs" />
+     <Compile Include="Assets\Objects\Playerground\Enemy\Spider\Script\SpiderControllerShowCase.cs" />
      <Compile Include="Assets\Objects\Playerground\Enemy\Spider\Script\SpiderStats.cs" />
      <Compile Include="Assets\Objects\Playerground\Obstacle\Script\ObstacleCollision.cs" />
+     <Compile Include="Assets\Objects\Playerground\Player\BabyDragonShowCase\BabyDragonShowCase.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\Others\CheckPoint.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\Others\GeneralInfor.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\Others\TestAnything.cs" />
