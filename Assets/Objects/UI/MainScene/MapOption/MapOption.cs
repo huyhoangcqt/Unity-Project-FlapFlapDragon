@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class SlideItemSetting{
@@ -32,6 +33,7 @@ public class MapOption : Singleton<MapOption>
     */
     private int count;
     public int current, scrollSpeed;
+    private GameObject notification;
 
     private void Start() {
         count = transform.childCount;
@@ -42,6 +44,7 @@ public class MapOption : Singleton<MapOption>
             settingIndexes[i] = 3;
         }
         current = 0;
+        notification = GameObject.Find("notification");
     }
 
     private void Update() {
@@ -133,4 +136,22 @@ public class MapOption : Singleton<MapOption>
             slideItems[current].transform.Find("border_activated").gameObject.SetActive(true);
         }
     }
+
+    public void PlayButtonClicked(){
+        IEnumerator TurnOfNotificationIE(){
+            yield return new WaitForSeconds(1f);
+            notification.GetComponent<Text>().enabled = false;
+        }
+
+        if (current == 0){
+            SceneManager.LoadScene(sceneName: "SeceneMap1");
+        }
+        else {
+            notification.GetComponent<Text>().enabled = true;
+            StartCoroutine(TurnOfNotificationIE());
+        }
+        
+    }
+
+
 }
