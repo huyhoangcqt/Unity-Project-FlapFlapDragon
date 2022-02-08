@@ -64,6 +64,7 @@
      <Compile Include="Assets\Objects\General\ObjectVisible.cs" />
      <Compile Include="Assets\Objects\General\Singleton.cs" />
      <Compile Include="Assets\Objects\General\Stats.cs" />
+     <Compile Include="Assets\Objects\Light\FireLight\FireLight.cs" />
      <Compile Include="Assets\Objects\Light\LightController.cs" />
      <Compile Include="Assets\Objects\Others\SavedPoint\Script\CheckPointController.cs" />
      <Compile Include="Assets\Objects\Playerground\Enemy\Bat\Script\BatController.cs" />
@@ -107,6 +108,7 @@
      <Compile Include="Assets\Objects\UI\Bar\Rage\RageBar\Script\RageBarFill.cs" />
      <Compile Include="Assets\Objects\UI\Bar\Rage\RageBar\Script\RageController01.cs" />
      <Compile Include="Assets\Objects\UI\Bar\Rage\RagePoint\Script\RagePoint.cs" />
+     <Compile Include="Assets\Objects\UI\MainScene\MapOption\MapOption.cs" />
      <Compile Include="Assets\Objects\UI\Others\General\FixUIPosition.cs" />
      <Compile Include="Assets\Objects\UI\Others\General\UIAutomaticScale.cs" />
      <Compile Include="Assets\Objects\UI\SkillButton\Script\ButtonController.cs" />

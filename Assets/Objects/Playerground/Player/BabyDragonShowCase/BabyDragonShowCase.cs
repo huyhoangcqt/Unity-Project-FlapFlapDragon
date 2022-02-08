@@ -36,6 +36,7 @@ public class BabyDragonShowCase : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, 0, 0);
         flame_instance = Instantiate(flameThrow, bulletSrc.transform.position, rotation);
         flame_after = Instantiate(flameAfter, bulletSrc.transform.position, rotation);
+        FireLight.instance.Lighten();
     }
 
     private void Throwing(){
@@ -48,11 +49,11 @@ public class BabyDragonShowCase : MonoBehaviour
         anim.SetBool("isThrowingCompleted", true);
         yield return new WaitForSeconds(duration);
         anim.SetBool("isThrowing", false);
-        anim.SetBool("isThrowingCompleted", true);
+        anim.SetBool("isThrowingCompleted", false);
         Destroy(flame_instance);
+        FireLight.instance.Darken();
         yield return new WaitForSeconds(0.5f);
         Destroy(flame_after);
-
     }
 
 }
