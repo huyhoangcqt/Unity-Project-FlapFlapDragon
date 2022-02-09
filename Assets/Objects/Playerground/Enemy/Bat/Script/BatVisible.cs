@@ -63,7 +63,7 @@ public class BatVisible : MonoBehaviour
         Vector2 ltPos = new Vector2(0, Screen.height);
         ltPos = Camera.main.ScreenToWorldPoint(ltPos);
         if (transform.position.x < ltPos.x){
-            print("Bat move out screen");
+            //print("Bat move out screen");
             if (isVisible){
                 OnBecameInvisible();
             }

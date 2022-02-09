@@ -21,7 +21,7 @@ public class TestCollision : MonoBehaviour
 
     IEnumerator ActiveCollider(){
         yield return new WaitForSeconds(2f);
-        print("Collider Active");
+        //print("Collider Active");
         col.enabled = true;
     }
 }

@@ -46,7 +46,7 @@ public class HealthBar01 : MonoBehaviour
         if (crrHp < 0){
             crrHp = 0;
         }
-        // print("Current HP: " + crrHp.ToString("N0"));
+        // //print("Current HP: " + crrHp.ToString("N0"));
     }
 
     public void RestoreHealth(float amount){
@@ -55,6 +55,6 @@ public class HealthBar01 : MonoBehaviour
         if (crrHp > maxHp){
             crrHp = maxHp;
         }
-        // print("Current HP: " + crrHp.ToString("N0"));
+        // //print("Current HP: " + crrHp.ToString("N0"));
     }
 }

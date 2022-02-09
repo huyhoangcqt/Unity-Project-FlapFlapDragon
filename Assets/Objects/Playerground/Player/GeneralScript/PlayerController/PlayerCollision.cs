@@ -19,9 +19,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Obstacle"){
-            // print("Player is collising");
+            // //print("Player is collising");
             if (status == PlayerStatus.Normal){
-                // print("Player is collising with normal status");
+                // //print("Player is collising with normal status");
                 StartCoroutine(ReCollisionWaiting1s());
                 //Make collision only 1 time with an object.
                 int temp = other.gameObject.GetInstanceID();

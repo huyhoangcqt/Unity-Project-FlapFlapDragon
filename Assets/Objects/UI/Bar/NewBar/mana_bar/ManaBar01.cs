@@ -62,7 +62,7 @@ public class ManaBar01 : MonoBehaviour
         if (crrMp < 0){
             crrMp = 0;
         }
-        print("Current MP: " + crrMp.ToString("N0"));
+        //print("Current MP: " + crrMp.ToString("N0"));
     }
 
     public void RestoreMana(float amount){
@@ -71,7 +71,7 @@ public class ManaBar01 : MonoBehaviour
         if (crrMp > maxMp){
             crrMp = maxMp;
         }
-        print("Current MP: " + crrMp.ToString("N0"));
+        //print("Current MP: " + crrMp.ToString("N0"));
     }
 
     public bool CheckingMana(int value){

@@ -26,7 +26,7 @@ public class FireballController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("Enemy") || other.gameObject.tag.Equals("Obstacle")
         || other.gameObject.tag.Equals("Ground")){
-            print("Fireball collision with " + other.gameObject.tag);
+            //print("Fireball collision with " + other.gameObject.tag);
             Vector3 pos = transform.position;
             SpawnDestroyEffect(pos);
             Destroy(gameObject);

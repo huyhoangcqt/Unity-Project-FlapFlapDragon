@@ -67,7 +67,7 @@ public class RageBar01 : MonoBehaviour
         if (crrRage < 0){
             crrRage = 0;
         }
-        // print("Current HP: " + crrRage.ToString("N0"));
+        // //print("Current HP: " + crrRage.ToString("N0"));
     }
 
     public void RestoreRage(float amount){
@@ -76,7 +76,7 @@ public class RageBar01 : MonoBehaviour
         if (crrRage > maxRage){
             crrRage = maxRage;
         }
-        // print("Current HP: " + crrRage.ToString("N0"));
+        // //print("Current HP: " + crrRage.ToString("N0"));
     }
 
     public bool CheckingRage(int rage){

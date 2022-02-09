@@ -22,13 +22,13 @@ public class ExplosionColliderActive : MonoBehaviour
 
     IEnumerator ActiveCollider1(){
         yield return new WaitForSeconds(1f);
-        print("ActiveCollider1");
+        //print("ActiveCollider1");
         colliders[0].enabled = true;
     }
 
     IEnumerator ActiveCollider2(){
         yield return new WaitForSeconds(8f);
-        print("ActiveCollider2");
+        //print("ActiveCollider2");
         for (int i = 1; i < colliders.Length; i++){
             colliders[i].enabled = true;
         }

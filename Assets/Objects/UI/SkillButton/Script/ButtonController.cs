@@ -94,7 +94,7 @@ public class ButtonController : MonoBehaviour
             }
         }
         if (isActive && !isEnoughEnergy){
-            print("Disable Button");
+            //print("Disable Button");
             DisableButton();
         }
     }

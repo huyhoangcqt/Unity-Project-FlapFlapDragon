@@ -11,12 +11,12 @@ public class TestImage : MonoBehaviour
     }
 
     public void TriggerActive(){
-        print("on click");
+        //print("on click");
         gameObject.SetActive(Trigger(gameObject.activeSelf));
     }
 
     public bool Trigger(bool value){
-        print("Value " + (!value).ToString());
+        //print("Value " + (!value).ToString());
         return !value;
     }
 }

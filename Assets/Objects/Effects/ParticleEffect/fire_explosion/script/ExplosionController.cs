@@ -8,6 +8,7 @@ public class ExplosionController : MonoBehaviour
     [SerializeField]private float speed, duration;
     [SerializeField] private GameObject player;
     private Vector3 distanceToPlayer = new Vector3(1.41f, 0.21f, 5f);
+    private Animator anim;
 
     GameObject FindGameObject(string objectName){
         GameObject result = GameObject.Find(objectName);
@@ -22,6 +23,7 @@ public class ExplosionController : MonoBehaviour
         player = FindGameObject("BabyDragon");
         transform.position = player.transform.position + distanceToPlayer;
         Destroy(gameObject, 12f);
+        anim = GetComponent<Animator>();
     }
 
     public void Start(){

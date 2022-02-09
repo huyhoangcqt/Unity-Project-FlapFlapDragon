@@ -57,8 +57,8 @@ public class ExplosionSkillEffect : MonoBehaviour
         rgbd2D.velocity = Vector3.zero;
         tempGravityScale = rgbd2D.gravityScale;
         rgbd2D.gravityScale = 0f;
-        print(transform.tag);
-        print(transform.position.x);
+        //print(transform.tag);
+        //print(transform.position.x);
         transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
 
         yield return new WaitForSeconds(1f);

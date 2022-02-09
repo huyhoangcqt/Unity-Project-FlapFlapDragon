@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         get { return _status; }
         set { 
             _status = value; 
-            print("player status change " + status);
+            //print("player status change " + status);
         }
     }
 

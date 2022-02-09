@@ -11,7 +11,7 @@ public class ParticleSystemProcessing : MonoBehaviour
         main.stopAction = ParticleSystemStopAction.Callback;
     }
     private void OnParticleSystemStopped() {
-        print("Particle system stopped");
+        //print("Particle system stopped");
         col.enabled = true;
     }
 }
