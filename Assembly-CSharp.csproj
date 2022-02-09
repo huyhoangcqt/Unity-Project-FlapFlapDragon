@@ -109,6 +109,7 @@
      <Compile Include="Assets\Objects\UI\Bar\Rage\RageBar\Script\RageController01.cs" />
      <Compile Include="Assets\Objects\UI\Bar\Rage\RagePoint\Script\RagePoint.cs" />
      <Compile Include="Assets\Objects\UI\LoadingScene\LevelLoader.cs" />
+     <Compile Include="Assets\Objects\UI\LoadingScene\PlayButton.cs" />
      <Compile Include="Assets\Objects\UI\MainScene\MapOption\MapOption.cs" />
      <Compile Include="Assets\Objects\UI\Others\General\FixUIPosition.cs" />
      <Compile Include="Assets\Objects\UI\Others\General\UIAutomaticScale.cs" />

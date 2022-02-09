@@ -32,7 +32,13 @@ public class MapOption : Singleton<MapOption>
         invisible item: left: 3, right: 4
     */
     private int count;
-    public int current, scrollSpeed;
+    [SerializeField] private int _current, scrollSpeed;
+
+    public int current{
+        get { return _current;}
+        set { _current = value;}
+    }
+
     private GameObject notification;
 
     private void Start() {
@@ -70,9 +76,11 @@ public class MapOption : Singleton<MapOption>
     }
 
     private void ApplySettingToSlideItem(int idx, int settingIdx){
-        StartCoroutine(TransformPositionIE(idx, settingIdx));
-        StartCoroutine(TransformLocalScaleIE(idx, settingIdx));
-        settingIndexes[idx] = settingIdx;
+        if (settingIndexes[idx] != settingIdx){
+            settingIndexes[idx] = settingIdx;
+            StartCoroutine(TransformPositionIE(idx, settingIdx));
+            StartCoroutine(TransformLocalScaleIE(idx, settingIdx));
+        }
     }
 
     IEnumerator TransformPositionIE(int idx, int settingIdx){
@@ -105,7 +113,7 @@ public class MapOption : Singleton<MapOption>
         float temp = src.x;
         if (delta != 0){
             while (des.x != temp){
-                temp += delta * deltaTime * 2;
+                temp += delta * deltaTime * 5;
                 if (delta < 0 && temp < des.x){
                     temp = des.x;
                 }
@@ -137,21 +145,12 @@ public class MapOption : Singleton<MapOption>
         }
     }
 
-    public void PlayButtonClicked(){
-        IEnumerator TurnOfNotificationIE(){
-            yield return new WaitForSeconds(1f);
-            notification.GetComponent<Text>().enabled = false;
-        }
-
-        if (current == 0){
-            SceneManager.LoadScene(sceneName: "SeceneMap1");
-        }
-        else {
-            notification.GetComponent<Text>().enabled = true;
-            StartCoroutine(TurnOfNotificationIE());
-        }
-        
+    IEnumerator TurnOfNotificationIE(){
+        yield return new WaitForSeconds(1f);
+        notification.GetComponent<Text>().enabled = false;
     }
-
-
+    public void ActiveNotiicationText(){
+        notification.GetComponent<Text>().enabled = true;
+        StartCoroutine(TurnOfNotificationIE());
+    }
 }
