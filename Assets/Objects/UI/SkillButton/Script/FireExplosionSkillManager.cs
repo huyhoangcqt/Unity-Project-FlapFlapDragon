@@ -16,7 +16,7 @@ public class FireExplosionSkillManager : MonoBehaviour
     private IEnumerator ExecutingExplosionSkill(float prepareTime){
         yield return new WaitForSeconds(prepareTime);
         skillEffect.ExplosionEffectStart();
-        FireLight.instance.Lighten();
+        //FireLight.instance.Lighten();
         yield return new WaitForSeconds(4f);
         skillEffect.CloseMouth();
         yield return new WaitForSeconds(durationTime - 4f);
@@ -26,7 +26,7 @@ public class FireExplosionSkillManager : MonoBehaviour
     private void ExplosionSkillEnd(){
         skillEffect.ExplosionEffectEnd();
         LightController.instance.Recover();
-        FireLight.instance.Darken();
+        //FireLight.instance.Darken();
     }
 
     private void ExplosionSkillStart(){

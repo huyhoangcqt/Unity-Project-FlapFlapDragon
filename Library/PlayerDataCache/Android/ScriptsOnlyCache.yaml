@@ -64,7 +64,6 @@ ScriptsOnlyBuild:
     - SpiderStats
     - Stats
     - UIAutomaticScale
-    - VariableJoystick
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.SpriteShape.Runtime.dll:
@@ -116,8 +115,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -157,6 +158,8 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -483,8 +486,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12566}
     - Class: 114
-      Script: {instanceID: 12638}
-    - Class: 114
       Script: {instanceID: 12740}
     - Class: 114
       Script: {instanceID: 12806}
@@ -570,8 +571,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16236}
     - Class: 114
       Script: {instanceID: 16296}
-    - Class: 114
-      Script: {instanceID: 16386}
     - Class: 114
       Script: {instanceID: 16388}
     - Class: 114
@@ -1169,7 +1168,7 @@ ScriptsOnlyBuild:
     className: BatVisible
   - hash:
       serializedVersion: 2
-      Hash: c2afc91c93f3717fd6d5f72d97228668
+      Hash: 72587aab6b5508a9f04dc2879d5a611c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ExplosionController
@@ -2024,4 +2023,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/main/LoadingScene.unity
   - Assets/Scenes/main/MainScene.unity
   - Assets/Scenes/main/SeceneMap1.unity
-  playerPath: G:/UnityProjects/My Projects/FlapFlapDragon/Test/FlapingDragonAlphav3.apk
+  playerPath: G:/UnityProjects/My Projects/FlapFlapDragon/Test/FlapingDragonAlphav4.apk
