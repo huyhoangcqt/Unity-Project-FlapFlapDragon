@@ -30,9 +30,6 @@ public class RageController01 : Singleton<RageController01>
     }
 
     public bool CheckingRage(int rage){
-        if (crrRage >= rage){
-            return true;
-        }
-        return false;
+        return rageBar.CheckingRage(rage);
     }
 }

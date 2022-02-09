@@ -73,4 +73,11 @@ public class ManaBar01 : MonoBehaviour
         }
         print("Current MP: " + crrMp.ToString("N0"));
     }
+
+    public bool CheckingMana(int value){
+        if (crrMp >= value){
+            return true;
+        }
+        return false;
+    }
 }

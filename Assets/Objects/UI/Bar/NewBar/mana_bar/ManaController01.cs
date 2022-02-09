@@ -13,10 +13,7 @@ public class ManaController01 : MonoBehaviour
         manaBar.mpRecovery = (float)mpRecovery;
     }
     public bool CheckingMana(int value){
-        if (mp >= value){
-            return true;
-        }
-        return false;
+        return manaBar.CheckingMana(value);
     }
 
     internal void RestoreMana(float mana){

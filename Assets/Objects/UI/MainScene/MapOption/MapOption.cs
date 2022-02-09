@@ -33,6 +33,7 @@ public class MapOption : Singleton<MapOption>
     */
     private int count;
     [SerializeField] private int _current, scrollSpeed;
+    private bool isScrolling = false;
 
     public int current{
         get { return _current;}
@@ -128,7 +129,9 @@ public class MapOption : Singleton<MapOption>
     }
 
     public void SlideToRight(){
-        if (current > 0){
+        if (current > 0 && !isScrolling){
+            isScrolling = true;
+            StartCoroutine(ActiveScrolling());
             slideItems[current].transform.Find("border_activated").gameObject.SetActive(false);
             current -= 1;
             slideItems[current].transform.SetAsLastSibling();
@@ -136,8 +139,15 @@ public class MapOption : Singleton<MapOption>
         }
     }
 
+    IEnumerator ActiveScrolling(){
+        yield return new WaitForSeconds(0.5f);
+        isScrolling = false;
+    }
+
     public void SlideToLeft(){
-        if (current < count-1){
+        if (current < count-1 && !isScrolling){
+            isScrolling = true;
+            StartCoroutine(ActiveScrolling());
             slideItems[current].transform.Find("border_activated").gameObject.SetActive(false);
             current += 1;
             slideItems[current].transform.SetAsLastSibling();

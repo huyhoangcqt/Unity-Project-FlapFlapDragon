@@ -78,4 +78,11 @@ public class RageBar01 : MonoBehaviour
         }
         // print("Current HP: " + crrRage.ToString("N0"));
     }
+
+    public bool CheckingRage(int rage){
+        if (crrRage >= rage){
+            return true;
+        }
+        return false;
+    }
 }
