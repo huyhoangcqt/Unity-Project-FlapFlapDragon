@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void InputDectection(){
-        if (inputEnabled){
+        if (inputEnabled && !PauseController.isPaused){
             if (Input.touchCount > 0){
                 Touch[] myTouches = Input.touches;
                 foreach (Touch touch in myTouches){
