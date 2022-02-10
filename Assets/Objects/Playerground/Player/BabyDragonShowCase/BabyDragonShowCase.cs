@@ -45,11 +45,11 @@ public class BabyDragonShowCase : MonoBehaviour
     }
 
     IEnumerator ThrowingIE(float duration){
-        yield return new WaitForSeconds(0.5f);
-        anim.SetBool("isThrowingCompleted", true);
         yield return new WaitForSeconds(duration);
-        anim.SetBool("isThrowing", false);
+        anim.SetBool("isThrowingCompleted", true);
+        yield return new WaitForSeconds(0.5f);
         anim.SetBool("isThrowingCompleted", false);
+        anim.SetBool("isThrowing", false);
         Destroy(flame_instance);
         FireLight.instance.Darken();
         yield return new WaitForSeconds(0.5f);
