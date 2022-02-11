@@ -108,6 +108,7 @@
      <Compile Include="Assets\Objects\UI\Bar\Rage\RageBar\Script\RageBarFill.cs" />
      <Compile Include="Assets\Objects\UI\Bar\Rage\RageBar\Script\RageController01.cs" />
      <Compile Include="Assets\Objects\UI\Bar\Rage\RagePoint\Script\RagePoint.cs" />
+     <Compile Include="Assets\Objects\UI\ControllerButtons\GameController\GameController.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\HomeButton\HomeButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\PauseButton\PauseButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\PauseController\PauseController.cs" />

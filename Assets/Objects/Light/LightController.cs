@@ -36,9 +36,6 @@ public class LightController : Singleton<LightController>
         float deltaTime = 0.2f;
         float crr = light.intensity;
         float deltaIntensity = (des - crr) /duration * deltaTime;
-       // //print("Current " + crr);
-       // //print("Des: " + des);
-       // //print("Delta: " + deltaIntensity);
         while (duration > 0.01f){
             yield return new WaitForSeconds(deltaTime);
             duration -= deltaTime;

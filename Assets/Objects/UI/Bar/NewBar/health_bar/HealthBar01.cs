@@ -7,10 +7,12 @@ public class HealthBar01 : MonoBehaviour
 {
     private float maxHp, crrHp;
     private Image fillImage, fillBgImage;
+    private GameObject player;
 
     void Start(){
         fillImage = transform.Find("fill").GetComponent<Image>();
         fillBgImage = transform.Find("fill_bg").GetComponent<Image>();
+        player = GameObject.Find("BabyDragon");
     }
 
     private float lerpTimer = 0f;
@@ -33,6 +35,10 @@ public class HealthBar01 : MonoBehaviour
             fillBgImage.color = red;
             fillBgImage.fillAmount = Mathf.Lerp(fillBg, fraction, percentComplete);
         }
+        if (crrHp == 0){
+            GameController.instance.GameOver();
+            // player.GetComponent<PlayerController>().PlayerDieEffect();
+        }
     }
 
     public void SetMaxHealth(float amount){
@@ -46,7 +52,6 @@ public class HealthBar01 : MonoBehaviour
         if (crrHp < 0){
             crrHp = 0;
         }
-        // //print("Current HP: " + crrHp.ToString("N0"));
     }
 
     public void RestoreHealth(float amount){

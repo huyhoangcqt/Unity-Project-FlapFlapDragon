@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using System.Collections;
 
-public class PauseController : MonoBehaviour
+public class PauseController : Singleton<PauseController>
 {
     public static bool isPaused;
 
-    private  void Awake() {
+    private void Start() {
         isPaused = false;
     }
 
@@ -25,6 +26,17 @@ public class PauseController : MonoBehaviour
         }
         else {
             Time.timeScale = 0f;
+        }
+    }
+
+    public void SlowDown(float value, int speed){
+        StartCoroutine(SlowDownIE(value, speed));
+    }
+
+    IEnumerator SlowDownIE(float value, int speed){
+        while (Time.timeScale > value){
+            yield return new WaitForSeconds(0.1f/speed);
+            Time.timeScale = Mathf.Clamp01(Time.timeScale - 0.1f);
         }
     }
 }
