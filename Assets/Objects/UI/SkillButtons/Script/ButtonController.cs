@@ -88,13 +88,16 @@ public class ButtonController : MonoBehaviour
          * * CheckingCondition
         */
         isEnoughEnergy = CheckingCondition();
-        if (!isActive){
+        if (!isActive && GameController.inputEnabled){
             if (!isCooldown && !isBanned && isEnoughEnergy){
                 ActiveButton();
             }
         }
         if (isActive && !isEnoughEnergy){
             //print("Disable Button");
+            DisableButton();
+        }
+        if (!GameController.inputEnabled){
             DisableButton();
         }
     }

@@ -82,6 +82,7 @@
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\Others\CheckPoint.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\Others\GeneralInfor.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\Others\TestAnything.cs" />
+     <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\PlayerController\DisolvedEffectController.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\PlayerController\PlayerCollision.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\PlayerController\PlayerController.cs" />
      <Compile Include="Assets\Objects\Playerground\Player\GeneralScript\PlayerController\PlayerStats.cs" />
@@ -114,6 +115,7 @@
      <Compile Include="Assets\Objects\UI\ControllerButtons\PauseController\PauseController.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\RestartButton\RestartButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\ResumeBtn\ResumeButton.cs" />
+     <Compile Include="Assets\Objects\UI\ControllerButtons\SettingButton\SettingButton.cs" />
      <Compile Include="Assets\Objects\UI\LoadingScene\LevelLoader.cs" />
      <Compile Include="Assets\Objects\UI\LoadingScene\PlayButton.cs" />
      <Compile Include="Assets\Objects\UI\MainScene\MapOption\MapOption.cs" />

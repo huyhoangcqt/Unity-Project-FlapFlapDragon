@@ -11,11 +11,13 @@ public class PauseController : Singleton<PauseController>
 
     public void PauseGame(){
         // isPaused = !isPaused;
+        GameController.inputEnabled = false;
         isPaused = true;
         AudioListener.pause = isPaused;
     }
 
     public void ResumeGame(){
+        GameController.inputEnabled = true;
         isPaused = false;
         AudioListener.pause = isPaused;
     }

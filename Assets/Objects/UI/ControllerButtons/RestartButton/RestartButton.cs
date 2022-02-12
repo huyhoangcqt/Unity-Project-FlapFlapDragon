@@ -1,10 +1,11 @@
 ﻿using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RestartButton : MonoBehaviour
 {
     public void OnButtonClicked(){
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(sceneName: currentScene.name);
+        GameController.inputEnabled = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
