@@ -3,10 +3,10 @@ using System.Collections;
 
 public class PauseController : Singleton<PauseController>
 {
-    public static bool isPaused;
-
-    private void Start() {
+    public static bool isPaused = false;
+    protected override void Awake() {
         isPaused = false;
+        instance = this;   
     }
 
     public void PauseGame(){

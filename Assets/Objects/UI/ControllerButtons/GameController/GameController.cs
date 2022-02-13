@@ -6,6 +6,11 @@ public class GameController : Singleton<GameController>
     [SerializeField] private GameObject player, gameoverPanel, transparentPanel;
     public static bool inputEnabled = true;
 
+    protected override void Awake() {
+        instance = this;
+        inputEnabled = true;
+    }
+
     public void GameOver(){
         StartCoroutine(GameOverIE());
     }

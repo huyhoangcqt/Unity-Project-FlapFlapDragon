@@ -7,12 +7,12 @@ public class DissolveEffect : MonoBehaviour
     private Material material;
     public float duration = 2f;
     private bool isDissolve  = false;
-    private float timeLoad = 0f, completedTime = 5f;
+    // private float completedTime = 5f;
     // Start is called before the first frame update
     void Start()
     {
         isDissolve = false;
-        completedTime = duration;
+        // completedTime = duration;
         material = GetComponent<SpriteRenderer>().material;
         material.SetFloat("_Fade", 0);
         StartCoroutine(Fade());
