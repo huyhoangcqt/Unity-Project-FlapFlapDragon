@@ -113,6 +113,7 @@
      <Compile Include="Assets\Objects\UI\ControllerButtons\HomeButton\HomeButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\PauseButton\PauseButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\PauseController\PauseController.cs" />
+     <Compile Include="Assets\Objects\UI\ControllerButtons\QuitButton\QuitGameButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\RestartButton\RestartButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\ResumeBtn\ResumeButton.cs" />
      <Compile Include="Assets\Objects\UI\ControllerButtons\SettingButton\SettingButton.cs" />

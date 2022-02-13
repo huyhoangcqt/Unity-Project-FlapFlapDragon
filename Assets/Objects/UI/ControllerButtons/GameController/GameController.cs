@@ -26,4 +26,8 @@ public class GameController : Singleton<GameController>
         transparentPanel.SetActive(true);
         gameoverPanel.SetActive(true);
     }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
 }
