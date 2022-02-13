@@ -55,6 +55,7 @@ ScriptsOnlyBuild:
     - PlayerCollision
     - PlayerController
     - PlayerStats
+    - QuitGameButton
     - RageBar
     - RageBar01
     - RageBarFill
@@ -322,6 +323,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11716}
     - Class: 114
+      Script: {instanceID: 11826}
+    - Class: 114
       Script: {instanceID: 12090}
     - Class: 114
       Script: {instanceID: 12184}
@@ -337,6 +340,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12758}
     - Class: 114
       Script: {instanceID: 12810}
+    - Class: 114
+      Script: {instanceID: 12952}
     - Class: 114
       Script: {instanceID: 13068}
     - Class: 114
@@ -373,6 +378,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15494}
     - Class: 114
       Script: {instanceID: 16174}
+    - Class: 114
+      Script: {instanceID: 16356}
     - Class: 114
       Script: {instanceID: 16402}
     - Class: 114
@@ -602,6 +609,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16550}
     - Class: 114
       Script: {instanceID: 16552}
+    - Class: 114
+      Script: {instanceID: 124364}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2017,7 +2026,7 @@ ScriptsOnlyBuild:
     className: CheckPointController
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4c4066e5fa5f03090e2367ba980b2a1a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingButton
@@ -2087,9 +2096,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 22426c8e9192c91a77e377bcc16329f6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuitGameButton
   platform: 13
   scenePathNames:
   - Assets/Scenes/main/LoadingScene.unity
   - Assets/Scenes/main/MainScene.unity
   - Assets/Scenes/main/SeceneMap1.unity
-  playerPath: G:/UnityProjects/My Projects/FlapFlapDragon/Test/FlapingDragonAlphav5.apk
+  playerPath: G:/UnityProjects/My Projects/FlapFlapDragon/Test/FlapingDragonAlphav6.apk
