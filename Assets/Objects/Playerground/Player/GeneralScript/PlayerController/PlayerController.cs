@@ -20,7 +20,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public static bool onGround = false;
+	public bool AttackInputEnabled { get => attackInputEnabled; set => attackInputEnabled = value; }
+	public bool InputEnabled { get => inputEnabled; set => inputEnabled = value; }
+
+	public static bool onGround = false;
     private bool attackInputEnabled = true, inputEnabled = true;
     private Animator anim;
     // public TutorialManager tutorialManager;
@@ -82,14 +85,74 @@ public class PlayerController : MonoBehaviour
     }
 
     void InputDectection(){
-        if (inputEnabled && !PauseController.isPaused){
+        if (inputEnabled && !PauseController.isPaused)
+		{
+#if UNITY_EDITOR
+			if (EventSystem.current.IsPointerOverGameObject())
+			{
+                return;
+			}
+
+			//Process Moving
+			if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isHoldingOnLeft = true;
+                status = PlayerStatus.Normal;
+                anim.SetBool("isIdle", false); //onGround = false;
+
+                // tutorialManager.SetIndex(-1);//Passed step 1;
+
+                //Set Force;
+                tempJumpForce = jumpForce;
+                tempMoveForce = moveForce;
+                rgbd2D.velocity = new Vector2(0, 0);
+                Moving();
+                tempJumpForce = additionalJumpForce;
+                tempMoveForce = additionalMoveForce;
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                isHoldingOnLeft = false;
+                holdingDuration = 0f;
+            }
+
+
+            //Process left mouse clicked => Shooter
+            if (Input.GetMouseButtonDown(0))
+            {
+                var clickPos = Input.mousePosition;
+                if (attackInputEnabled)
+                {
+                    emberSkillManager.TryAttack(clickPos, isDown: true);
+                    
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                var clickPos = Input.mousePosition;
+                emberSkillManager.TryAttack(clickPos, isDown: false);
+            }
+
+
+
+#elif UNITY_ANDROID || UNITY_IOS
             if (Input.touchCount > 0){
+
+
                 Touch[] myTouches = Input.touches;
                 foreach (Touch touch in myTouches){
-                    /* 
+					/* 
                     * * If Touch on left side => Movement
                     */
-                    if (touch.position.x < Screen.width *2/5){
+
+					if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+					{
+                        return;
+					}
+
+					if (touch.position.x < Screen.width *2/5){
                         if (touch.phase == TouchPhase.Began){
                             isHoldingOnLeft = true;
                             status = PlayerStatus.Normal;
@@ -112,14 +175,18 @@ public class PlayerController : MonoBehaviour
                     }
                     //If Touch at right side => shooting
                     else {
-                        if (attackInputEnabled){
-                            if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId)){
-                                emberSkillManager.Process(touch);
-                            }
-                        }
+						if (touch.phase == TouchPhase.Began)
+						{
+						    emberSkillManager.TryAttack(touch.position, isDown: true);
+						}
+                        else if (touch.phase == TouchPhase.Ended)
+						{ 
+						    emberSkillManager.TryAttack(touch.position, isDown: false);
+						}
                     }
                 };
             }
+#endif
         }
     }
 

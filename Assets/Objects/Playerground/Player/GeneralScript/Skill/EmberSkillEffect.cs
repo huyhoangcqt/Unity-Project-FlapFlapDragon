@@ -24,9 +24,13 @@ public class EmberSkillEffect : MonoBehaviour
         }
     }
 
+    //Đáng lẽ chỗ này nên đặt keyframe trong Animation
+    //-=-> Đến keyframe shooter thì gọi Shooter().
+
+
     private Vector3 direction;
-    public void Process(Touch touch){
-        Vector3 transform_pos = Camera.main.ScreenToWorldPoint(touch.position);
+    public void Process(Vector3 touchPos){
+        Vector3 transform_pos = Camera.main.ScreenToWorldPoint(touchPos);
             direction = new Vector3(transform_pos.x, transform_pos.y, 0)
                 - bulletSrc.transform.position;
             direction.z = 0;
