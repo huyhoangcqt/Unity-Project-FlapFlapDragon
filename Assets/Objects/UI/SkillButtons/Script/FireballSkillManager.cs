@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -23,6 +23,8 @@ public class FireballSkillManager : MonoBehaviour
 		if (!PauseController.isPaused){ 
             FireballStart();
             CooldownStart();
+
+            //Xóa bộ đệm vị trí con trỏ. Tránh cho khi thao tác, UIEventSystem lại tưởng click lên Element này.
 			EventSystem.current.SetSelectedGameObject(null);
 		}
     }
