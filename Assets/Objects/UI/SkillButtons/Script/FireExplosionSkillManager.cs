@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class FireExplosionSkillManager : MonoBehaviour
 {
@@ -46,7 +47,8 @@ public class FireExplosionSkillManager : MonoBehaviour
             ExplosionSkillStart();        
             ButtonCooldownStart();
             ButtonBannedOnStart();
-        }
+			EventSystem.current.SetSelectedGameObject(null);
+		}
     }
 
     private void ButtonBannedOnStart(){

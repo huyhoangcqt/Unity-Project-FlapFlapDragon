@@ -41,7 +41,7 @@ public class EmberSkillManager : Singleton<EmberSkillManager>
     private void Update()
     {
 		bool isAttackEnabled = mPlayer == null ? false : mPlayer.AttackInputEnabled;
-		Debug.Log($"[EmberSkillManager] isAttackEnabled: {isAttackEnabled} -  onHolding: {onHolding} - isAttackCompleted: {isAttackCompleted}");
+		//Debug.Log($"[EmberSkillManager] isAttackEnabled: {isAttackEnabled} -  onHolding: {onHolding} - isAttackCompleted: {isAttackCompleted}");
 
 		if (isAttackEnabled && onHolding && isAttackCompleted)
         {

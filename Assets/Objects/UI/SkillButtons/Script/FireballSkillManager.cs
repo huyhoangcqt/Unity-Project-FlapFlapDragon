@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 public class FireballSkillManager : MonoBehaviour
 {
     [SerializeField] private FireballSkillEffect fireballEffect;
@@ -16,14 +17,18 @@ public class FireballSkillManager : MonoBehaviour
         }
     }
 
-    public void OnButtonClick(){
-        if (!PauseController.isPaused){ 
+    public void OnButtonClick()
+	{
+		Debug.Log("OnButtonClick");
+		if (!PauseController.isPaused){ 
             FireballStart();
             CooldownStart();
-        }
+			EventSystem.current.SetSelectedGameObject(null);
+		}
     }
 
     public void FireballStart(){
+        Debug.Log("FireballStart");
         StartCoroutine(FireballDuration(durationTime));
     }
 

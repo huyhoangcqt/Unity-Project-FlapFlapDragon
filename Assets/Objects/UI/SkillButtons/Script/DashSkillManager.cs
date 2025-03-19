@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DashSkillManager : MonoBehaviour
@@ -17,7 +18,8 @@ public class DashSkillManager : MonoBehaviour
             DashSkillStart();
             ButtonCoolDownStart();
             ButtonBannedOn();
-        }
+			EventSystem.current.SetSelectedGameObject(null);
+		}
     }
 
     private void Update(){

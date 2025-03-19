@@ -88,10 +88,6 @@ public class PlayerController : MonoBehaviour
         if (inputEnabled && !PauseController.isPaused)
 		{
 #if UNITY_EDITOR
-			if (EventSystem.current.IsPointerOverGameObject())
-			{
-                return;
-			}
 
 			//Process Moving
 			if (Input.GetKeyDown(KeyCode.Space))
@@ -118,8 +114,13 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            //Process left mouse clicked => Shooter
-            if (Input.GetMouseButtonDown(0))
+			//Process left mouse clicked => Shooter
+			if (EventSystem.current.IsPointerOverGameObject())
+			{
+				return;
+			}
+
+			if (Input.GetMouseButtonDown(0))
             {
                 var clickPos = Input.mousePosition;
                 if (attackInputEnabled)
@@ -147,10 +148,7 @@ public class PlayerController : MonoBehaviour
                     * * If Touch on left side => Movement
                     */
 
-					if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-					{
-                        return;
-					}
+
 
 					if (touch.position.x < Screen.width *2/5){
                         if (touch.phase == TouchPhase.Began){
@@ -175,6 +173,10 @@ public class PlayerController : MonoBehaviour
                     }
                     //If Touch at right side => shooting
                     else {
+                    	if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+					    {
+                            return;
+					    }
 						if (touch.phase == TouchPhase.Began)
 						{
 						    emberSkillManager.TryAttack(touch.position, isDown: true);
@@ -187,8 +189,8 @@ public class PlayerController : MonoBehaviour
                 };
             }
 #endif
-        }
-    }
+		}
+	}
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.transform.tag.Equals("Ground")){
